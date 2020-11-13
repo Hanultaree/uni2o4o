@@ -825,16 +825,13 @@ var dur = null; var t = null; var num=null;
     };
 
     // 재생
-    function onPlayerReady(event) {event.target.playVideo();	};
+    function onPlayerReady(event) {event.target.playVideo();};
     // 일시정지
     function pauseVideo() {player.pauseVideo();};
     // 종료
     function stopVideo() {player.stopVideo();};
-	// Error
-	function onPlayerError(event){
-		errlist.push('Error: ' + event.data + '\t' + rank + '\t' + title + '\t' + selm + '\r\n');
-		return false;
-	};
+    // Error
+    function onPlayerError(event){player.nextVideo();};
 
     // 음소거 On / Off
     function volumeMute() {
