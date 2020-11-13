@@ -146,11 +146,11 @@ fread("ytbm");
 	
 function fread(fn){
     $(function (){
-	var fileName = "../uni2o4o-1/" + fn + ".csv";	// 파일 이름
+	var fileName = "./" + fn + ".csv";	// 파일 이름
 
 	$.ajax({
 		url:fileName,
-    headers: {  'Access-Control-Allow-Origin': '../uni2o4o-1/' },
+//    headers: {  'Access-Control-Allow-Origin': '../uni2o4o-1/' },
 		dataType:'text',
 		success: function(da) {
 			var textLine = '<script type="text/javascript">var ' + fn + '=[';
@@ -300,7 +300,7 @@ $(function (){
 		}
 
 //================== 하단 꼬리말 footer 화면==================
- 		ccdn.push('</div><div class="footer"><div id="player"></div><p>끝까지 즐감해 주셔서 감사합니다......</p><img src="../uni2o4o-3/iou.gif"></div></div>');
+ 		ccdn.push('</div><div class="footer"><div id="player"></div><p>끝까지 즐감해 주셔서 감사합니다......</p><img src="../uni2o4o/iou.gif"></div></div>');
 
  for (i=0; i<ccdn.length; i++){ccdsum=ccdsum+ccdn[i]};
   $('.container').append(ccdsum);
@@ -336,7 +336,7 @@ $(function (){
 		}
 
 //================== 하단 꼬리말 footer 화면==================
- 		ccdn.push('</div><div class="footer"><div id="player"></div><p>끝까지 즐감해 주셔서 감사합니다......</p><img src="../uni2o4o-3/iou.gif"></div></div>');
+ 		ccdn.push('</div><div class="footer"><div id="player"></div><p>끝까지 즐감해 주셔서 감사합니다......</p><img src="../uni2o4o/iou.gif"></div></div>');
 
  for (i=0; i<ccdn.length; i++){ccdsum=ccdsum+ccdn[i]};
   $('.container').append([ccdsum]);
@@ -626,7 +626,7 @@ function itiner(){
 		}
 
 //================== 하단 꼬리말 footer 화면==================
- 		titin.push('</div><div class="footer"><div id="player"></div><p>끝까지 즐감해 주셔서 감사합니다......</p><br/><img src="../uni2o4o-3/iou.gif"></div></div></div>');
+ 		titin.push('</div><div class="footer"><div id="player"></div><p>끝까지 즐감해 주셔서 감사합니다......</p><br/><img src="../uni2o4o/iou.gif"></div></div></div>');
 
  for (i=0; i<titin.length; i++){tsum=tsum+titin[i]};
   $(".item").hide();
@@ -797,7 +797,7 @@ var dur = null; var t = null; var num=null;
         onYouTubeIframeAPIReady();
     });
 
-	 $('#canv').append('<div id="lyr"><button id="rtn" class="btn1" onClick="retn();">RETURN</button><br><div><div id="player"></div><hr/> <input type="button" value="재생" onClick="playVideo();"/> <input type="button" value="일시정지" onClick="pauseVideo();"/> <input type="button" value="종료" onClick="stopVideo();"/> <input type="button" id="volumeMute" value="음소거" onClick="volumeMute();"/> 볼륨 : <input type="range" value="50" min="0" max="100" onChange="soundControl(this.value);"/></div><img src="../uni2o4o-3/mel01.gif" class="mi"><img src="../uni2o4o-3/mel02.gif"  class="mi"> <img src="../uni2o4o-3/mel03.gif" class="mi"><img src="../uni2o4o-3/mel02.gif" class="mi"><img src="../uni2o4o-3/mel01.gif" class="mi"><br><br><br><h3>' + ytbm[num][3] + ' - ' + ytbm[num][4] + '</h3><br><br><div class="wd">' + ytbm[num][5] + '</div><br><img src="../uni2o4o-3/iou.gif"><br><br></div><br><br>');
+	 $('#canv').append('<div id="lyr"><button id="rtn" class="btn1" onClick="retn();">RETURN</button><br><div><div id="player"></div><hr/> <input type="button" value="재생" onClick="playVideo();"/> <input type="button" value="일시정지" onClick="pauseVideo();"/> <input type="button" value="종료" onClick="stopVideo();"/> <input type="button" id="volumeMute" value="음소거" onClick="volumeMute();"/> 볼륨 : <input type="range" value="50" min="0" max="100" onChange="soundControl(this.value);"/></div><img src="../uni2o4o/mel01.gif" class="mi"><img src="../uni2o4o/mel02.gif"  class="mi"> <img src="../uni2o4o/mel03.gif" class="mi"><img src="../uni2o4o/mel02.gif" class="mi"><img src="../uni2o4o/mel01.gif" class="mi"><br><br><br><h3>' + ytbm[num][3] + ' - ' + ytbm[num][4] + '</h3><br><br><div class="wd">' + ytbm[num][5] + '</div><br><img src="../uni2o4o/iou.gif"><br><br></div><br><br>');
 
 	});
 };
