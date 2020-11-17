@@ -539,24 +539,26 @@ function yme(){		//-- 음악감상에서 RETURN 할때
       }
 	})
   }
-
+/*
   //========== 정렬  ======================
   function objSort(obj, sort){
     if(orderBy == "asc"){ //오름차순 정렬
       orderBy = "desc";
-      lists.sort(function(a, b){
+      obj.sort(function(a, b){
         if (a[sort] > b[sort]) return 1;
         else if (a[sort] < b[sort]) return -1;
       });
     }else{ //내림차순 정렬
       orderBy = "asc";
-      lists.sort(function(a, b){
+      obj.sort(function(a, b){
         if (a[sort] > b[sort]) return -1;
         else if (a[sort] < b[sort]) return 1;
       });
     }
   }
-
+*/
+objSort(obj, sort);
+		
   function tagParsing(obj, init){
     var tag = "";
     var len = obj.length;
@@ -865,7 +867,7 @@ function yminit(){
     }
   })
 }
-
+ 
 function objSort(obj, sort){
   if(orderBy == "asc"){ //오름차순 정렬
     orderBy = "desc";
@@ -881,7 +883,7 @@ function objSort(obj, sort){
     });
   }
 }
-
+ 
 function tagParsing(obj, yminit){
   var len = obj.length;
   var tag = '';
