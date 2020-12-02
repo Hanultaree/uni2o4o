@@ -68,14 +68,14 @@
 	.pcanvas h2{padding-top:2%;}
 	.pcanvas button{cursor:pointer;margin:3%;color:#f00;}
 
-	.slid1{position: absolute;text-align: center;	animation:myslide 15s -12.5s ease infinite;}
-	.slid2{position: absolute;text-align: center;	animation:myslide 15s -10s ease infinite;}
-	.slid3{position: absolute;text-align: center;	animation:myslide 15s -7.5s ease infinite;}
-	.slid4{position: absolute;text-align: center;	animation:myslide 15s -5s ease infinite;}
-	.slid5{position: absolute;text-align: center;	animation:myslide 15s -2.5s ease infinite;}
-	.slid6{position: absolute;text-align: center;	animation:myslide 15s ease infinite;}
+	.sli1{position: absolute;text-align: center;	animation:mysli 15s -12.5s ease infinite;}
+	.sli2{position: absolute;text-align: center;	animation:mysli 15s -10s ease infinite;}
+	.sli3{position: absolute;text-align: center;	animation:mysli 15s -7.5s ease infinite;}
+	.sli4{position: absolute;text-align: center;	animation:mysli 15s -5s ease infinite;}
+	.sli5{position: absolute;text-align: center;	animation:mysli 15s -2.5s ease infinite;}
+	.sli6{position: absolute;text-align: center;	animation:mysli 15s ease infinite;}
 
-	@keyframes myslide{
+	@keyframes mysli{
 		0%{width:10px;height:10px;opacity: 0.0;transform:translate(490px,60px);}
 		16%{width:90px;height:60px;opacity: 0.3;transform:translate(740px,60px);}
 		33%{width:180px;height:120px;opacity: 0.8;transform:translate(800px,100px);}
@@ -669,7 +669,7 @@ function itiner(){
 					mntname = club + " " + mntname;
 				}else{opn = "n";}
 */
-        titin.push('<div class="canvas"><div class="header"><button class="btn" onclick="cme();">RETURN</button><h2 class="h2">' + mntname + ' 산행사진</h2></div><div id="canva1"><div class="slid1"><img id="image1" class="mg"></div><div class="slid2"><img id="image2" class="mg"></div><div class="slid3"><img id="image3" class="mg"></div><div class="slid4"><img id="image4" class="mg"></div><div class="slid5"><img id="image5" class="mg"></div><div class="slid6"><img id="image6" class="mg"></div></div><div class="itiner"><p class="ta">배경음악은..... <span class="tb">'+titlm+'</span></p><p class="tc">'+titln+'</p><ul><li class="li">1. 산행일시 : &nbsp; ' + skds[num][1] + ' </li><li class="li">2. 산행지 &nbsp; : &nbsp; ' + skds[num][2] + '_____' + skds[num][3] + ' </li><li class="li">3. 산행코스 : &nbsp; ' + skds[num][4] + ' </li><li class="li">4. 산행시간 : &nbsp; ' + skds[num][5] + ' &nbsp;(휴식/식사 시간 포함)&nbsp; </li><li class="mem">' + skds[num][7] + '</li></ul></div><div class="map"><p>↓ &nbsp; ' + skds[num][2] + ' &nbsp; 등산지도와 코스.....</p><img src="' + skds[num][6] + '"></div><div class="img">');
+        titin.push('<div class="canvas"><div class="header"><button class="btn" onclick="cme();">RETURN</button><h2 class="h2">' + mntname + ' 산행사진</h2></div><div id="canva1"><div class="sli1"><img id="image1" class="mg"></div><div class="sli2"><img id="image2" class="mg"></div><div class="sli3"><img id="image3" class="mg"></div><div class="sli4"><img id="image4" class="mg"></div><div class="sli5"><img id="image5" class="mg"></div><div class="sli6"><img id="image6" class="mg"></div></div><div class="itiner"><p class="ta">배경음악은..... <span class="tb">'+titlm+'</span></p><p class="tc">'+titln+'</p><ul><li class="li">1. 산행일시 : &nbsp; ' + skds[num][1] + ' </li><li class="li">2. 산행지 &nbsp; : &nbsp; ' + skds[num][2] + '_____' + skds[num][3] + ' </li><li class="li">3. 산행코스 : &nbsp; ' + skds[num][4] + ' </li><li class="li">4. 산행시간 : &nbsp; ' + skds[num][5] + ' &nbsp;(휴식/식사 시간 포함)&nbsp; </li><li class="mem">' + skds[num][7] + '</li></ul></div><div class="map"><p>↓ &nbsp; ' + skds[num][2] + ' &nbsp; 등산지도와 코스.....</p><img src="' + skds[num][6] + '"></div><div class="img">');
 
 //================== 이미지 & description 화면================
 	for (var i=0 ; i < trimgs.length ; i++ )
@@ -709,23 +709,23 @@ frames.unshift(' ');
 	  //변수를 선언합니다.
       var count = 0;
       var cnt = 0;
-      var image1 = document.getElementById('image1');
-      var image2 = document.getElementById('image2');
-      var image3 = document.getElementById('image3');
-      var image4 = document.getElementById('image4');
-      var image5 = document.getElementById('image5');
-      var image6 = document.getElementById('image6');
+      var ima1 = document.getElementById('image1');
+      var ima2 = document.getElementById('image2');
+      var ima3 = document.getElementById('image3');
+      var ima4 = document.getElementById('image4');
+      var ima5 = document.getElementById('image5');
+      var ima6 = document.getElementById('image6');
 
 		// 초기 슬라이드의 위치 지정 (랜덤으로)
         var randomNumber = Math.round(Math.random() * frames.length);
  		if ( randomNumber < 7 ){ randomNumber = 7 };
 
-		image1.src = frames[randomNumber-6];
-		image2.src = frames[randomNumber-5];
-		image3.src = frames[randomNumber-4];
-		image4.src = frames[randomNumber-3];
-		image5.src = frames[randomNumber-2];
-		image6.src = frames[randomNumber-1];
+		ima1.src = frames[randomNumber-6];
+		ima2.src = frames[randomNumber-5];
+		ima3.src = frames[randomNumber-4];
+		ima4.src = frames[randomNumber-3];
+		ima5.src = frames[randomNumber-2];
+		ima6.src = frames[randomNumber-1];
 
 		count = randomNumber - 1;
 
@@ -736,12 +736,12 @@ frames.unshift(' ');
 		cnt = cnt + 1;
 		idn = "sl" + cnt;
 
-			if (cnt==1){image1.src = frames[count];}
-			if (cnt==2){image2.src = frames[count];}
- 			if (cnt==3){image3.src = frames[count];}
- 			if (cnt==4){image4.src = frames[count];}
- 			if (cnt==5){image5.src = frames[count];}
- 			if (cnt==6){image6.src = frames[count]; cnt = 0;}
+			if (cnt==1){ima1.src = frames[count];}
+			if (cnt==2){ima2.src = frames[count];}
+ 			if (cnt==3){ima3.src = frames[count];}
+ 			if (cnt==4){ima4.src = frames[count];}
+ 			if (cnt==5){ima5.src = frames[count];}
+ 			if (cnt==6){ima6.src = frames[count]; cnt = 0;}
 
 		if (count == frames.length-1)
 		{
