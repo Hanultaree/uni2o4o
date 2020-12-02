@@ -1008,7 +1008,6 @@ function tagParsing(obj, yminit){
       $('#footer').empty();
     });
   };
-  tourlist();
 
   //*<.imga>영역을 클릭하면 함수실행
   $(document).on("click", ".imga", function() {
@@ -1064,7 +1063,7 @@ function tagParsing(obj, yminit){
       //*<.imgb>영역을 클릭하면 함수실행
     $(document).on("click", ".imgb", function() {
 		sez = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
-        slz = sez;
+        	slz = sez;
 		mnubar();
 		dispx(num2);  
 	});
