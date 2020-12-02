@@ -1060,20 +1060,23 @@ function tagParsing(obj, yminit){
   };
 
   //*=========== 이미지 썸네일 (images)화면 메뉴바(citylist) ============
-  function mnubar() {
-    $(function() {
 
       //*<.imgb>영역을 클릭하면 함수실행
-      $(document).on("click", ".imgb", function() {
+    $(document).on("click", ".imgb", function() {
+		sez = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
+        slz = sez;
+		mnubar();
+		dispx(num2);  
+	});
+
+  function mnubar() {
+    $(function() {
         var mtxt = new Array;
         var msum = "";
         var tmtxt = new Array;
         var tmsum = "";
         var smtxt = new Array;
         var smsum = "";
-
-		sez = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
-        slz = sez;
 
         mtxt.push('<div id="menubar"><span onclick="rtncity();"><img src="http://cfile285.uf.daum.net/original/99AF47455E55CD6E318F16"></span><div id="player"></div><ul>');
 
@@ -1086,11 +1089,11 @@ function tagParsing(obj, yminit){
         mtxt.push('</ul></div>');
         for (i = 0; i < mtxt.length; i++) {msum = msum + mtxt[i]};
         htxt1 = msum;
+
         for (i = 0; i < city.length; i++) {
           if (city[i][0] == sez) {
 			  htxt2 = '<div class="head"><br><h1 class="hd">' + city[i][1] + '</h1><span><button onclick="slidshw();">연속 슬라이드</button></span></div>';
  			  num2 = i;
-			  dispx(num2);
 			  };
         };
         hdtitl();
@@ -1101,6 +1104,26 @@ function tagParsing(obj, yminit){
             tmtxt.push('<div class="thumb2 imgc"><img class="imgc" src="' + imges[i][0] + '" title="' + imges[i][1] + '"/></div>');
           };
         };
+
+     for (i = 0; i < tmtxt.length; i++) {
+          tmsum = tmsum + tmtxt[i]
+        };
+        $("#canvao").empty();
+        $("#canvao").hide();
+        $("#canvaoa").show();
+		$("#canvaoa").empty();
+        $('#canvaoa').append([tmsum]);
+
+        smtxt.push('<div id="mask1" class="mask1"><div><img src="" id="big"></div><div id="out"></div></div>');
+        smtxt.push('<div id="mask2" class="mask2"><div class="slide1"><img id="image1"></div><div class="slide2"><img id="image2"></div><div class="slide3"><img id="image3"></div><div class="slide4"><img id="image4"></div><div class="slide5"><img id="image5"></div><div class="slide6"><img id="image6"></div></div>');
+        for (i = 0; i < smtxt.length; i++) {
+          smsum = smsum + smtxt[i]
+        };
+        $("#dumm").empty();
+        $('#dumm').append([smsum]);
+    });
+  };
+
         //*================== BIG IMAGE 영역 ===========================
         $(function() {
           //*<.imgc>영역을 클릭하면 함수실행
@@ -1119,27 +1142,7 @@ function tagParsing(obj, yminit){
           });
         });
         //*------------------ BIG IMAGE 영역 end -----------------------
-        for (i = 0; i < tmtxt.length; i++) {
-          tmsum = tmsum + tmtxt[i]
-        };
-        $("#canvao").empty();
-        $("#canvao").hide();
-        $("#canvaoa").show();
-	$("#canvaoa").empty();
-        $('#canvaoa').append([tmsum]);
-
-        smtxt.push('<div id="mask1" class="mask1"><div><img src="" id="big"></div><div id="out"></div></div>');
-        smtxt.push('<div id="mask2" class="mask2"><div class="slide1"><img id="image1"></div><div class="slide2"><img id="image2"></div><div class="slide3"><img id="image3"></div><div class="slide4"><img id="image4"></div><div class="slide5"><img id="image5"></div><div class="slide6"><img id="image6"></div></div>');
-        for (i = 0; i < smtxt.length; i++) {
-          smsum = smsum + smtxt[i]
-        };
-        $("#dumm").empty();
-        $('#dumm').append([smsum]);
-      });
-    });
-  };
-  mnubar();
-  //*----------- 이미지 썸네일 (images)화면 메뉴바(citylist) end --------
+   
   //*============== 이미지 슬라이드 (slider)화면 영역  ===============
   function slidshw() {
       $(".mask2").show();
