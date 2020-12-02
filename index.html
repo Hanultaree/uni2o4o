@@ -988,9 +988,10 @@ function tagParsing(obj, yminit){
   //*=========== Main (tour)화면 영역 tourlist ============
   function tourlist() {
     $(function() {
-
+	$(".contentso").show();
+	$(".mmenu").hide();    
       htxt1 = '<h1 class="hd">해외여행 &nbsp; 풍경사진 &nbsp; 모음</h1>';
-      htxt2 = '<span><button onclick="window.close();">창닫기</button></span>';
+      htxt2 = '<span><button class="btn" onClick="osme();">RETURN</button></span>';
       hdtitl();
 
       var ttxt = new Array; var tsum = '';
