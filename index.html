@@ -971,7 +971,7 @@ function tagParsing(obj, yminit){
    //--■■■■■■■■■■■■■■■■■해외여행사진 __ostour■■■■■■■■■■■■■■■■■■
   var htxt1 = ''; var htxt2 = '';
   var ftxt1 = ''; var ftxt2 = '';
-  var seq = ''; var sez = ''; var slz = ''; var num = 0;
+  var seq = ''; var sez = ''; var slz = ''; var num = 0; var num1 = 0; var num2 = 0;
 
   function hdtitl() {
     $('#header').empty();
@@ -1063,11 +1063,14 @@ function tagParsing(obj, yminit){
 
       //*<.imgb>영역을 클릭하면 함수실행
     $(document).on("click", ".imgb", function() {
-		sez = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
+	sez = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
         slz = sez;
-		mnubar();
-		dispx(num2);  
-	});
+        for (i = 0; i < city.length; i++) {
+		if (city[i][0] == sez) {num2 = i; };
+        };	    
+	mnubar();
+	dispx(num2);  
+    });
 
   function mnubar() {
     $(function() {
@@ -1088,13 +1091,8 @@ function tagParsing(obj, yminit){
         };
         mtxt.push('</ul></div>');
         for (i = 0; i < mtxt.length; i++) {msum = msum + mtxt[i]};
-        htxt1 = msum;
-
-        for (i = 0; i < city.length; i++) {
-          if (city[i][0] == sez) {
-			  htxt2 = '<div class="head"><br><h1 class="hd">' + city[i][1] + '</h1><span><button onclick="slidshw();">연속 슬라이드</button></span></div>';
- 			  num2 = i;
-			  };
+            htxt1 = msum;
+	    htxt2 = '<div class="head"><br><h1 class="hd">' + city[num2][1] + '</h1><span><button onclick="slidshw();">연속 슬라이드</button></span></div>';
         };
         hdtitl();
 
