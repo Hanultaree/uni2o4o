@@ -1021,7 +1021,7 @@ function tagParsing(obj, yminit){
 
   function rtncity(){
     $(function() {
-	  stopVideo();
+ 	  stopVideo();
 	  $('#player').remove();
           sez = "";
 	  $("#canvaoa").empty();
@@ -1065,12 +1065,8 @@ function tagParsing(obj, yminit){
     $(document).on("click", ".imgb", function() {
 	sez = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
         slz = sez;
-	stopVideo();
-        for (i = 0; i < city.length; i++) {
-		if (city[i][0] == sez) {num2 = i; };
-        };	    
+//	stopVideo();
 	mnubar();
-	dispx(num2);  
     });
 
   function mnubar() {
@@ -1093,7 +1089,13 @@ function tagParsing(obj, yminit){
         mtxt.push('</ul></div>');
         for (i = 0; i < mtxt.length; i++) {msum = msum + mtxt[i]};
             htxt1 = msum;
-	    htxt2 = '<div class="head"><br><h1 class="hd">' + city[num2][1] + '</h1><span><button onclick="slidshw();">연속 슬라이드</button></span></div>';
+       for (i = 0; i < city.length; i++) {
+		if (city[i][0] == sez) {
+	    		htxt2 = '<div class="head"><br><h1 class="hd">' + city[i][1] + '</h1><span><button onclick="slidshw();">연속 슬라이드</button></span></div>';
+			num2 = i; 
+		};
+        };	    
+	dispx(num2);  
         hdtitl();
 
         //*============== 이미지 썸네일 (images)화면 영역  ===============
