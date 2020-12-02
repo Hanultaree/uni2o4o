@@ -1065,6 +1065,7 @@ function tagParsing(obj, yminit){
     $(document).on("click", ".imgb", function() {
 	sez = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
         slz = sez;
+	stopVideo();
         for (i = 0; i < city.length; i++) {
 		if (city[i][0] == sez) {num2 = i; };
         };	    
@@ -1206,7 +1207,6 @@ function tagParsing(obj, yminit){
 //================ ostour 용 음악 재생 player ==========
  function dispx(numx){
 	$(function () {
-	  	stopVideo();
 		selm = city[numx][5];
 		seln = selm;
 	    h = '1';   w = '1';
