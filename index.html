@@ -84,6 +84,23 @@
 		84%{width:90px;height:60px;opacity: 0.3;transform:translate(160px,60px);}
 		100%{width:10px;height:10px;opacity: 0.0;transform:translate(490px,60px);}
 	}
+ /*------------  해외여행사진/슬라이드 용 css------------ */
+    .slide1{position:absolute;text-align:center;animation:myslide 24s -20s ease infinite;}
+    .slide2{position:absolute;text-align:center;animation:myslide 24s -16s ease infinite;}
+    .slide3{position:absolute;text-align:center;animation:myslide 24s -12s ease infinite;}
+    .slide4{position:absolute;text-align:center;animation:myslide 24s -8s ease infinite;}
+    .slide5{position:absolute;text-align:center;animation:myslide 24s -4s ease infinite;}
+    .slide6{position:absolute;text-align:center;animation:myslide 24s ease infinite;}
+
+    @keyframes myslide {
+      0% {width:6px;height:6px;opacity:0.0;transform:translate(510px,64px);}
+      16% {width:58px;height:38px;opacity:0.3;transform:translate(853px,64px);}
+      33% {width:134px;height:90px;opacity:0.8;transform:translate(872px,150px);}
+      50% {width:656px;height:437px;opacity:1.0;transform:translate(185px,40px);}
+      67% {width:134px;height:90px;opacity:0.8;transform:translate(20px,150px);}
+      84% {width:58px;height:38px;opacity:0.3;transform:translate(115px,64px);}
+      100% {width:6px;height:6px;opacity:0.0;transform:translate(510px,64px);}
+  	}
 
  /*------------  음악감상 ----yms Music List 용 css------------ */
 	.container1{display:none;border:5px solid gray;background:lightblue;text-align:left;max-width:630px;padding:20px;margin:10px;}
@@ -1112,7 +1129,7 @@ function tagParsing(obj, yminit){
         $('#canvaoa').append([tmsum]);
 
         smtxt.push('<div id="mask1" class="mask1"><div><img src="" id="big"></div><div id="out"></div></div>');
-        smtxt.push('<div id="mask2" class="mask2"><div class="slid1"><img id="image1"></div><div class="slid2"><img id="image2"></div><div class="slid3"><img id="image3"></div><div class="slid4"><img id="image4"></div><div class="slid5"><img id="image5"></div><div class="slid6"><img id="image6"></div></div>');
+        smtxt.push('<div id="mask2" class="mask2"><div class="slide1"><img id="image1"></div><div class="slide2"><img id="image2"></div><div class="slide3"><img id="image3"></div><div class="slide4"><img id="image4"></div><div class="slide5"><img id="image5"></div><div class="slide6"><img id="image6"></div></div>');
         for (i = 0; i < smtxt.length; i++) {
           smsum = smsum + smtxt[i]
         };
@@ -1182,7 +1199,7 @@ function tagParsing(obj, yminit){
         if (cnt == 6) {image6.src = frames[count];cnt = 0;}
 
         if (count == frames.length - 1) {count = 0;}
-      }, 2500);
+      }, 4000);
     });
   };
 
