@@ -1019,18 +1019,6 @@ function tagParsing(obj, yminit){
     citylist();
   });
 
-  function rtncity(){
-    $(function() {
-	  stopVideo();
-	  $('#player').remove();
-          sez = "";
-	  $("#canvaoa").empty();
-	  $("#canvaoa").hide();
-	  $("#canvao").show();
-          citylist();
-    });
-  };
-
   //*=========== 여행도시 (city)화면 영역 citylist ============
   function citylist() {
     $(function() {
@@ -1059,20 +1047,31 @@ function tagParsing(obj, yminit){
       });
   };
 
+  function rtncity(){
+    $(function() {
+	  stopVideo();
+	  $('#player').remove();
+          sez = "";
+	  $("#canvaoa").empty();
+	  $("#canvaoa").hide();
+	  $("#canvao").show();
+          citylist();
+    });
+  };
+
+  //*<.imgb>영역을 클릭하면 함수실행
+  $(document).on("click", ".imgb", function() {
+		sez = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
+		mnubar(sez);
+  });
+
   //*=========== 이미지 썸네일 (images)화면 메뉴바(citylist) ============
-  function mnubar() {
+  function mnubar(sez) {
     $(function() {
 
-      //*<.imgb>영역을 클릭하면 함수실행
-      $(document).on("click", ".imgb", function() {
-        var mtxt = new Array;
-        var msum = "";
-        var tmtxt = new Array;
-        var tmsum = "";
-        var smtxt = new Array;
-        var smsum = "";
-
-		sez = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
+        var mtxt = new Array;        var msum = "";
+        var tmtxt = new Array;        var tmsum = "";
+        var smtxt = new Array;        var smsum = "";
         slz = sez;
 
         mtxt.push('<div id="menubar"><span onclick="rtncity();"><img src="http://cfile285.uf.daum.net/original/99AF47455E55CD6E318F16"></span><div id="player"></div><ul>');
@@ -1135,10 +1134,9 @@ function tagParsing(obj, yminit){
         };
         $("#dumm").empty();
         $('#dumm').append([smsum]);
-      });
     });
   };
-  mnubar();
+
   //*----------- 이미지 썸네일 (images)화면 메뉴바(citylist) end --------
   //*============== 이미지 슬라이드 (slider)화면 영역  ===============
   function slidshw() {
@@ -1220,6 +1218,7 @@ function tagParsing(obj, yminit){
 
 	});
 };
+
 
 var tour = [
 ["A", "서유럽 5개국", "2000.10.25 ~ 11.03", "http://cfile210.uf.daum.net/image/1460C9194A1B2BFB10422E", "유럽 5개국 일주여행 풍경사진", "Five countries in the west of Europe", "( Italia, Austria, Swiss, France, England and Deutschland )"],
