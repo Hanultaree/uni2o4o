@@ -456,6 +456,7 @@ function vme(){		//-- 테마별 사진모음/산행기에서 RETURN 할때
 function osme(){		//-- 테마별 사진모음/산행기에서 RETURN 할때
     $('#canvao').empty();
 	$(".contentso").hide();
+	$(".container").show();
     $(".mmenu").show();
 };
 
@@ -988,8 +989,9 @@ function tagParsing(obj, yminit){
   //*=========== Main (tour)화면 영역 tourlist ============
   function tourlist() {
     $(function() {
-				$(".contentso").show();
-				$(".mmenu").hide();
+	$(".contentso").show();
+	$(".mmenu").hide();
+	$(".container").hide();
       htxt1 = '<h1 class="hd">해외여행 &nbsp; 풍경사진 &nbsp; 모음</h1>';
       htxt2 = '<span><button class="btn" onClick="osme();">RETURN</button></span>';
       hdtitl();
