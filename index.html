@@ -1062,6 +1062,8 @@ function tagParsing(obj, yminit){
   //*<.imgb>영역을 클릭하면 함수실행
   $(document).on("click", ".imgb", function() {
 		sez = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
+	    $('#player').remove();
+	    $("#canvaoa").empty();
 		mnubar(sez);
   });
 
