@@ -43,8 +43,7 @@
 	.combo{	grid-column: 4/span 1;grid-row: 1/span 1;}
 
  	@media screen and (min-width: 678px) { .lans { grid-column: 2/span 1; grid-row: 2/span 3; }} 
-	@media screen and (min-width: 950px) { .lans { grid-column: 3/span 1; grid-row: 2/span 3; }} 
-
+	@media screen and (min-width: 950px) { .lans { grid-column: 3/span 1; grid-row: 2/span 3; }; #canvao{grid-template-columns: repeat(5, 180px); }; #canvaoa{grid-template-columns: repeat(5, 150px); }; }
  /*------------  alplist(); ----계절별 산행사진 모음 테이블 용 css------------ */
 	.ha,.hb,.h2{text-align: center;}
 	.btn{cursor:pointer;text-align:center;font-weight:bold;padding:5px;color:#f00;margin:0px 20px; position:fixed;}
@@ -144,8 +143,8 @@
     #header{min-height:10%;padding-top:50px;}
     #header h1{text-align:center;}
     #header span{margin-left:50px;}
-    #canvao{max-width:960px;max-height:100%;padding-top:50px;color:#000;display:grid;grid-gap:15px;grid-template-columns: repeat(5, 180px);grid-auto-rows: 180px;align-content:center;justify-content:center;}
-    #canvaoa{max-width:800px;max-height:100%;padding-top:50px;color:#000;display:grid;grid-gap:10px;grid-template-columns: repeat(5, 150px);grid-auto-rows: minmax(120px,auto);align-items:end;justify-content:center;}
+    #canvao{max-width:960px;max-height:100%;padding-top:50px;color:#000;display:grid;grid-gap:15px;grid-template-columns: repeat(3, 180px);grid-auto-rows: 180px;align-content:center;justify-content:center;}
+    #canvaoa{max-width:800px;max-height:100%;padding-top:50px;color:#000;display:grid;grid-gap:10px;grid-template-columns: repeat(3, 150px);grid-auto-rows: minmax(120px,auto);align-items:end;justify-content:center;}
     #contento{display:grid;grid-template-columns:1fr;max-height:100%;max-width:100%;justify-items:center;}
     #footer{text-align:center;min-height:15%;margin:50px 0px;}
 
@@ -180,7 +179,7 @@
 	 <div class="mmenu">
 		<div class="head">
 			<h1>지난달력 안뗀다고 세월이 서랴</h1>
-			<h4>그 무엇도 生滅을 벗어날 수는 없습니다.<br>아름드리 나무도 바위도 그리고.. 시간 마저도...</h4>
+			<h4>그 무엇도 生滅을 벗어날 수는 없습니다.<br>아름드리 나무도 바위 그리고.. 시간 마저도..</h4>
 		</div>
 		<div class="side">
 			<div id="datepicker"></div>
