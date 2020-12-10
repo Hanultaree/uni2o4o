@@ -43,11 +43,7 @@
 	.combo{	grid-column: 4/span 1;grid-row: 1/span 1;}
 
  	@media screen and (min-width: 678px) and (max-width: 950px) { .lans { grid-column: 2/span 1; grid-row: 2/span 3; }} 
-	@media screen and (min-width: 950px) { 
-		.lans { grid-column: 3/span 1; grid-row: 2/span 3; } 
-		#canvao{grid-template-columns: repeat(5, 180px); } 
-		#canvaoa{grid-template-columns: repeat(5, 150px); } 
-	  }
+	@media screen and (min-width: 950px) { .lans { grid-column: 3/span 1; grid-row: 2/span 3; } }
  /*------------  alplist(); ----계절별 산행사진 모음 테이블 용 css------------ */
 	.ha,.hb,.h2{text-align: center;}
 	.btn{cursor:pointer;text-align:center;font-weight:bold;padding:5px;color:#f00;margin:0px 20px; position:fixed;}
@@ -151,6 +147,10 @@
     #canvaoa{max-width:800px;max-height:100%;padding-top:50px;color:#000;display:grid;grid-gap:10px;grid-template-columns: repeat(3, 150px);grid-auto-rows: minmax(120px,auto);align-items:end;justify-content:center;}
     #contento{display:grid;grid-template-columns:1fr;max-height:100%;max-width:100%;justify-items:center;}
     #footer{text-align:center;min-height:15%;margin:50px 0px;}
+	@media screen and (min-width: 950px) { 
+		#canvao{grid-template-columns: repeat(5, 180px); }
+		#canvaoa{grid-template-columns: repeat(5, 150px); } 
+	  }
 
     #dumm{height=0;}
     .hd{text-shadow: 4px 4px 4px gray;}
