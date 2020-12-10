@@ -19,7 +19,7 @@
 	.side {display: grid; 	grid-template-columns: 190px 130px 1fr; grid-template-rows: 160px 190px 140px 500px; grid-gap: 10px;}
 	#datepicker {}
 	#canvas {	border-radius:60px;}
-	.imgi {grid-column: 1/span 1;grid-row: 2/span 1;}
+	.imgjy {grid-column: 1/span 1;grid-row: 2/span 1;}
 	.prof {grid-column: 1/span 2;grid-row: 3/span 1; color: #f93; font-weight: bold;}
 	.prof h4{padding: 0; margin: 0;}
 	.prof h5{padding: 10px; margin: 0;}
@@ -27,7 +27,7 @@
 	.ui-datepicker-week-end:first-child a { color: red; }
 	.ui-datepicker-week-end:last-child a { color: red; }
 	.ui-state-highlight.ui-state-default{background:#9ff;}
-	.imgi>img{width:180px;border: 2px solid white;}
+	.imgjy>img{width:180px;border: 2px solid white;}
 	.lans { grid-column: 1/span 3;grid-row: 4/span 1; }
 /* ----------- mmenu / main grid -------------- */
 	.main {display: grid; grid-template-columns: repeat(3,1fr); grid-template-rows: repeat(3, 160px); grid-gap: 10px; max-width:500px;	font-size:0.8em}
@@ -177,7 +177,7 @@
 
 <!-- 메인메뉴 mmenu part -->
 <div class="container">
-	 <section class="mmenu">
+	 <div class="mmenu">
 		<div class="head">
 			<h1>지난달력 안뗀다고 세월이 서랴</h1>
 			<h4>그 무엇도 生滅을 벗어날 수는 없습니다.<br>아름드리 나무도 바위도 그리고.. 시간 마저도...</h4>
@@ -186,7 +186,7 @@
 			<div id="datepicker"></div>
 			<span class="clocki"><canvas id="canvas" width="120px" height="120px"
 			style="background-color:#fff"></canvas></span>
-			<div class="imgi"><img src="http://cfs4.blog.daum.net/image/3/blog/2007/06/16/17/17/46739c9f26e6a&filename=na3.jpg"></div>
+			<div class="imgjy"><img src="http://cfs4.blog.daum.net/image/3/blog/2007/06/16/17/17/46739c9f26e6a&filename=na3.jpg"></div>
 			<div class="prof">
 				<h4>하눌타리 이종영</h4>
 				<h5>하염(何念)없이 사는 사람<br>달력 떼쟎고 버티는 이에게<br>부질없는 일이라 하면서도<br>모습 참 예쁘다 하는 사람</h5>
@@ -204,7 +204,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 </div>
 
 <!-- 음악감상 yms part -->
@@ -365,54 +365,7 @@ function fread(fn){
   //--■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
   var num = 0; 	var uval = ""; var clb = "";
   var ctg = "" ;var c_cd = ""; var c_cd0 = ""; var c_cd1 = ""; var cod = "";
-/* 
-//================== seq 값 읽어오기 ================
-    function _GET(search) {
-        var obj = {};
-        var uri = decodeURI(search);
-            uri = uri.slice(1,uri.length);
- 
-        var param = uri.split('&');
-        
-        for (var i = 0; i < param.length; i++) {
-            var devide = param[i].split('=');
-            obj[devide[0]] = devide[1];
-        }
-        return obj;
-    }
-window.onload = function () {
-	var search = window.location.search;
-	var getData =  _GET(search);
-	uval = getData.val;
-}
-//====== club, seq, opn 지정 =====
-if (uval.length == 0){
-	clb = ""; club = ""; opn = "n";
-	seq = "";
-}else if (uval.length == 1){
-	clb = uval.substr(0,1);
-	seq = "";
-}else if (uval.length == 4){
-	clb = uval.substr(0,1);
-	seq = uval.substr(1,3);
-}
-switch (clb) {
-  case "a" :
-    club = "산술애"; opn = "y";
-    break;
-  case "b" :
-    club = "부중산"; opn = "y";
-    break;
-  case "c" :
-    club = ""; opn = "y";
-    break;
-};
-//====== mmenu / alprpt(seq 지정시) 실행
-if (seq !== ""){
-	$(".mmenu").hide();
-	alprpt(seq);
-}else {
-*/
+
 	function bran(ctg){
 		$(function(){
 			if (ctg == "1"){
@@ -436,7 +389,6 @@ if (seq !== ""){
 			}}}}}
 		});
 	};
-//};
  			
   //*== ●●●●●●●● vwpriv();      ----내 사진모음 ----start==========
 	 var c_cda = 0; var rec = 1;
