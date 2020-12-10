@@ -30,7 +30,7 @@
 	.imgjy>img{width:180px;border: 2px solid white;}
 	.lans { grid-column: 1/span 3;grid-row: 4/span 1; }
 /* ----------- mmenu / main grid -------------- */
-	.main {display: grid; grid-template-columns: repeat(3,1fr); grid-template-rows: repeat(3, 160px); grid-gap: 10px; max-width:500px;	font-size:0.8em}
+	.main {display: grid; grid-template-columns: repeat(4,1fr); grid-template-rows: repeat(3, 160px); grid-gap: 10px; max-width:500px;	font-size:0.8em}
 	.bl-a, .right {display: none;}
 	.alpine {	grid-column: 1/span 2;grid-row: 1/span 1;max-width:330px;background:#e0ebeb url(http://cfile297.uf.daum.net/original/99C1A8415F35E08A1E51A5) no-repeat center;}
 	.priv {grid-column: 3/span 1;grid-row: 1/span 1;	max-width:160px;	background:#e0ebeb url(http://cfile281.uf.daum.net/original/99C271415F35E08B1EC7B3) no-repeat center; }
@@ -40,10 +40,10 @@
 	.yms {grid-column: 3/span 1;grid-row: 3/span 1;	max-width:160px;	background:#e0ebeb url(http://cfile255.uf.daum.net/original/997B18395F586E4E0E9FA6) no-repeat center; }
 	.mnu {border-radius:20px;padding:5px;}
 	.mnu:hover{color:#f00;cursor:pointer;}
+	.combo{	grid-column: 4/span 1;grid-row: 1/span 1;}
 
  	@media screen and (min-width: 678px) { .lans { grid-column: 3/span 1; grid-row: 1/span 3; }} 
 	@media screen and (min-width: 950px) { .lans { grid-column: 3/span 1; grid-row: 2/span 3; }} 
-	.combo{	grid-column: 11/span 1;grid-row: 5/span 2;}
 
  /*------------  alplist(); ----계절별 산행사진 모음 테이블 용 css------------ */
 	.ha,.hb,.h2{text-align: center;}
@@ -396,7 +396,7 @@ function fread(fn){
 function vwpriv(){
 $(function (){
 	var ccds = '<div class="combo"><select id="combo"><option value="-1" selected="selected">년도 선택</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2012">2012~14</option><option value="2007">2007~11</option></select></div>';
-	$('.mmenu').append(ccds);
+	$('.main').append(ccds);
 
 	$(function(){
 		$('#combo').change(function(){
