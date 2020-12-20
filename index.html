@@ -20,18 +20,22 @@
 	.head>h1 { font-size: 2.5em;}
 /* ----------- mmenu / side grid -------------- */
 	.side {display: grid; 	grid-template-columns: 190px 130px 1fr; grid-template-rows: 160px 190px 140px 500px; grid-gap: 10px;}
-	#datepicker {}
 	#canvas {	border-radius:60px;}
 	.imgjy {grid-column: 1/span 1;grid-row: 2/span 1;}
 	.prof {grid-column: 1/span 2;grid-row: 3/span 1; color: #f93; font-weight: bold;}
 	.prof h4{padding: 0; margin: 0;}
 	.prof h5{padding: 10px; margin: 0;}
-	.ui-datepicker{ font-size: 10px; width: 180px;}
-	.ui-datepicker-week-end:first-child a { color: red; }
-	.ui-datepicker-week-end:last-child a { color: red; }
-	.ui-state-highlight.ui-state-default{background:#9ff;}
 	.imgjy>img{border: 2px solid white;}
 	.lans { grid-column: 1/span 3;grid-row: 4/span 1; padding-top:20px;}
+/* ------------ calendar 용 css ---------------- */
+	#dcal {background-color: lightblue;width: 175px;border: 1px solid gray;border-radius:10px;padding:5px;}
+	.head {grid-column: 1/span 7;font-size: 1em;font-weight: bold;text-align: center;margin-bottom:5px;}
+	.main {display: grid;grid-template-columns: repeat(7, 25px);grid-template-rows: auto;}
+	.wk {font-size: 0.9em;font-weight: bold;text-align: center;margin-bottom:5px;}
+	.da {text-align: center;font-size: 0.9em;}
+	.wk:nth-child(7n),.wk:nth-child(7n+1){color:#f00;}
+	.da:nth-child(7n),.da:nth-child(7n+1){color:#f00;}
+	.tod {background: radial-gradient(#ffc, lightblue );}
 /* ----------- mmenu / maing grid -------------- */
 	.maing {display: grid; grid-template-columns: repeat(4,140px); grid-template-rows: repeat(3, 140px); grid-gap: 10px; max-width:500px;	font-size:0.8em}
 	.bl-a, .right {display: none;}
@@ -187,7 +191,7 @@
 			<h2>그 무엇도 생멸을 벗어날 수는 없습니다.<br>아름드리 나무 바위도 그리고.. 시간 마저도..</h2>
 		</div>
 		<div class="side">
-			<div id="datepicker"></div>
+			<div id="dcal"></div>
 			<span class="clocki"><canvas id="canvas" width="120px" height="120px"
 			style="background-color:#fff"></canvas></span>
 			<div class="imgjy"><img src="http://cfs4.blog.daum.net/image/3/blog/2007/06/16/17/17/46739c9f26e6a&filename=na3.jpg"></div>
@@ -276,9 +280,45 @@ function fread(fn){
 
   //--■■■■■■■■■■■■■■■■ mmenu ■■■■■■■■■■■■■
 	//====== calendar display=========
-		$( function() {
-			$( "#datepicker" ).datepicker();
-		} );
+	function calen(){
+		$(function(){
+			var tmlsum = ""; var tml = new Array;
+			var week = ['일', '월', '화', '수', '목', '금', '토'];
+			var Now = new Date();
+
+			var yy = Now.getFullYear();  //== 해당년도 (4글자)
+			var mm = Now.getMonth();  //== 해당월 코드 (0~11)
+			var dd = Now.getDate();  //== 오늘 일자
+			var mo = mm+1;
+
+			var wkd = new Date(yy, mm, 1).getDay();  //== 해당월 1일의 요일코드
+			var lsd = new Date(yy, mm+1, 0).getDate();	//== 특정월의 마지막 일자수
+
+					tml.push('<div class="head">' + yy + '년 ' + mo + '월</div><div class="main">');
+
+					for (i=0; i<week.length; i++){
+						tml.push('<div class="wk">' + week[i] + '</div>');
+					}
+
+					for (i=0; i<wkd; i++){
+						tml.push('<div class="da"></div>');
+					}
+
+					for (i=1; i<= lsd; i++){
+						if ( i == dd ){
+							tml.push('<div class="da tod">' + i + '</div>');
+						}else{
+							tml.push('<div class="da">' + i + '</div>');
+						}
+					}
+					tml.push('</div>');
+
+			for (i=0; i<tml.length; i++){tmlsum=tmlsum+tml[i]};  //*--canvas <div>에 작성된 code 기록....
+					$("#dcal").empty();
+					$('#dcal').append([tmlsum]);
+		});
+	};
+	calen();
 	
 	//====== clock display=========
 	$(function(){
