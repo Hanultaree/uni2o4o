@@ -30,7 +30,7 @@
 /* ------------ calendar 용 css ---------------- */
 	#dcal {background-color: lightblue;width: 175px;border: 1px solid gray;border-radius:10px;padding:5px;}
 	.heac {grid-column: 1/span 7;font-size: 1em;font-weight: bold;text-align: center;margin-bottom:5px;}
-	.main {display: grid;grid-template-columns: repeat(7, 25px);grid-template-rows: auto;}
+	.mai {display: grid;grid-template-columns: repeat(7, 25px);grid-template-rows: auto;}
 	.wk {font-size: 0.9em;font-weight: bold;text-align: center;}
 	.da {text-align: center;font-size: 0.9em;}
 	.wk:nth-child(7n),.wk:nth-child(7n+1){color:#f00;}
@@ -294,7 +294,7 @@ function fread(fn){
 			var wkd = new Date(yy, mm, 1).getDay();  //== 해당월 1일의 요일코드
 			var lsd = new Date(yy, mm+1, 0).getDate();	//== 특정월의 마지막 일자수
 
-					tml.push('<div class="heac">' + yy + '년 ' + mo + '월</div><div class="main">');
+					tml.push('<div class="heac">' + yy + '년 ' + mo + '월</div><div class="mai">');
 
 					for (i=0; i<week.length; i++){
 						tml.push('<div class="wk">' + week[i] + '</div>');
