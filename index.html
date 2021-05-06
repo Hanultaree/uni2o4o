@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <meta name="viewport" content="width=device-width, initial-scale=0.6">
   <link rel="shortcut icon" href="#" type="image/x-icon">
   <link rel="icon" href="#" type="image/x-icon">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />        
@@ -26,7 +26,7 @@
 	.prof h4{padding: 0; margin: 0;}
 	.prof h5{padding: 10px; margin: 0;}
 	.imgjy>img{border: 2px solid white;}
-	.lans { grid-column: 1/span 3;grid-row: 4/span 1; margin:10px;}
+	.lans { grid-column: 1/span 3;grid-row: 4/span 1; margin:10px; margin-left:40px;}
 /* ------------ calendar 용 css ---------------- */
 	#dcal {background-color: lightblue;width: 175px;border: 1px solid gray;border-radius:10px;padding:5px;height:auto;}
 	.heac {grid-column: 1/span 7;font-size: 1em;font-weight: bold;text-align: center;margin-bottom:5px;}
@@ -37,14 +37,18 @@
 	.da:nth-child(7n),.da:nth-child(7n+1){color:#f00;}
 	.tod {background: radial-gradient(#ffc, lightblue );}
 /* ----------- mmenu / maing grid -------------- */
-	.maing {display: grid; grid-template-columns: repeat(4,140px); grid-template-rows: repeat(3, 140px); grid-gap: 10px; max-width:500px;	font-size:0.8em}
+	.maing {display: grid; grid-template-columns: repeat(4,120px); grid-template-rows: repeat(5, 120px); grid-gap: 10px; max-width:500px;	font-size:0.8em}
 	.bl-a, .right {display: none;}
 	.alpine {	grid-column: 1/span 2;grid-row: 1/span 1;max-width:330px;background:#e0ebeb url(./img_alpine.jpg) no-repeat center;}
 	.priv {grid-column: 3/span 1;grid-row: 1/span 1;	max-width:160px;	background:#e0ebeb url(./img_priv.jpg) no-repeat center; }
 	.wfall {grid-column: 2/span 1;grid-row: 2/span 1;	max-width:160px;	background:#e0ebeb url(./img_wfall.jpg) no-repeat center; }
 	.rock {grid-column: 3/span 1;grid-row: 2/span 1;	max-width:160px;	background:#e0ebeb url(./img_rock.jpg) no-repeat center; }
-	.ostr {grid-column: 1/span 2;grid-row: 3/span 1;	max-width:330px;	background:#e0ebeb url(./img_ostr.jpg) no-repeat center; }
-	.yms {grid-column: 3/span 1;grid-row: 3/span 1;	max-width:160px;	background:#e0ebeb url(./mus.jpg) no-repeat center; }
+	.shijo {grid-column: 1/span 2;grid-row: 3/span 1;	max-width:330px;	background:#e0ebeb url(./img_shijo.jpg) no-repeat center; }
+	.sun {grid-column: 3/span 1;grid-row: 3/span 1;	max-width:160px;	background:#e0ebeb url(./img_sun.jpg) no-repeat center; }
+	.flower {grid-column: 2/span 1;grid-row: 4/span 1;	max-width:160px;	background:#e0ebeb url(./img_flower.jpg) no-repeat center; }
+	.bird {grid-column: 3/span 1;grid-row: 4/span 1;	max-width:160px;	background:#e0ebeb url(./img_bird.jpg) no-repeat center; }
+	.ostr {grid-column: 1/span 2;grid-row: 5/span 1;	max-width:330px;	background:#e0ebeb url(./img_ostr.jpg) no-repeat center; }
+	.yms {grid-column: 3/span 1;grid-row: 5/span 1;	max-width:160px;	background:#e0ebeb url(./mus.jpg) no-repeat center; }
 	.mnu {border-radius:20px;padding:5px;}
 	.mnu:hover{color:#f00;cursor:pointer;}
 	.combo{	grid-column: 4/span 1;grid-row: 1/span 1;}
@@ -126,22 +130,30 @@
   	}
 
  /*------------  음악감상 ----yms Music List 용 css------------ */
-	.container1{display:none;border:5px solid gray;background:lightblue;text-align:left;max-width:630px;padding:20px;margin:10px;}
-	.report{display:grid;	grid-template-columns: 1fr 7fr 4fr;	grid-gap:1px;	border:1px solid gray;}
-	.mus,.artst{background:#e0ebeb;font-size:0.8em;}
-	.title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
+	.container1{display:none;border:5px solid gray;background:lightblue;text-align:left;padding:10px;margin:10px;}
+	.report{display:grid;	grid-template-columns: 2fr 3fr 3fr 2fr 6fr;	grid-gap:1px;	border:1px solid gray;}
+	.mus,.artst{background:#e0ebeb;font-size:0.7em;}
+	.title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;font-size:0.8em;}
 	.data1{border-top:0px;}
 	.m_no{text-align:center;}
-	.subj,.artst{padding-left:10px;}
+	.subj{grid-column: 2/span 3;padding-left:10px;}
+	.artst{padding-left:10px;}
 	.title li:hover, .mus:hover, button:hover{color:red;cursor:pointer}
 	.btn1{font-size:0.9em; text-align:center; font-weight:bold;margin:10px;margin-top:0px;padding:5px;}
 
 	#lyr{border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;
-		border-spacing:11px;padding:1px;background:#ffe6ff;width:100%;height:auto;text-align:center;font-family:"굴림";font-weight:bold;}
-	.wd{color:blue;padding-left:80px;text-align:left;line-height:160%;height:auto;overflow-y: auto;}
+		border-spacing:11px;padding:1px;background:#ffe6ff;height:auto;text-align:center;font-family:"굴림";font-weight:bold;}
+	.wd{color:blue;padding-left:80px;text-align:left;line-height:160%;height:auto;overflow-y: auto;font-size:0.8em;}
 	.h3{text-align:center;color:darkblue;}
-	#canv{max-width:630px;padding:0px;margin:10px;text-align:left;}
+	#canv{padding:0px;margin:10px;text-align:left;}
 	.mi{height:35px;}
+	@media screen and (min-width: 950px) { .wd {font-size:1.2em;} .h3{font-size:1.4em;}}
+ /*------------  시조놀이 감상 ----shijo List 용 css------------ */
+	.shi{background:#e0ebeb;padding:5px 10px;font-size:0.7em;}
+	.sh_title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;font-size:0.8em;}
+	.sh_no{text-align:center;}
+	.sh_txt{grid-column: 4/span 2;font-size:0.7em;}
+	.sh_title:hover, .sh_no:hover, .sh_subj:hover, button:hover{color:red;cursor:pointer}
 
  /*------------  해외여행 사진 ---- ostour 용 css------------ */
     .contentso{display:none;min-height:940px;background:url("http://cfile284.uf.daum.net/original/99DD35415E547C4839E5D4") 100% center no-repeat fixed;color:black;width:100%;max-height:100%;}
@@ -206,8 +218,13 @@
 					<div class="mnu wfall" onclick="bran(3);">3폭포</div>
 					<div class="mnu rock" onclick="bran(4);">4기묘한 바위 나무</div>
 					<div class="mnu bl-a">5</div>
-					<div class="mnu ostr" onclick="bran(5)">6해외 여행사진</div>
-					<div class="mnu yms" onclick="bran(6);">7음악감상</div>
+					<div class="mnu shijo" onclick="bran(5)">5시조놀이</div>
+					<div class="mnu sun" onclick="bran(6);">6일출일몰</div>
+					<div class="mnu flower" onclick="bran(7);">7꽃_벌</div>
+					<div class="mnu bird" onclick="bran(8);">8새_하늘</div>
+					<div class="mnu bl-a">5</div>
+					<div class="mnu ostr" onclick="bran(9)">9해외 여행사진</div>
+					<div class="mnu yms" onclick="bran(0);">0음악감상</div>
 					<div class="mnu right"></div>
 				</div>
 			</div>
@@ -215,15 +232,22 @@
 	</div>
 </div>
 
-<!-- 음악감상 yms part -->
+
 <div class="container1">
-		<button id="rtn" class="btn1" onClick="yme();">RETURN</button><button id="submita" class="btn1"> 자동재생</button>
+	<!-- 음악감상 yms part -->
+	<button id="rtn" class="btn1" onClick="yme();">RETURN</button><button id="submita" class="btn1 lst_m"> 자동재생</button>
 
 	<div class="title report">
-		<li id="m_no" class="m_no title">NO</li>
-		<li id="subj" class="subj title">제목</li>
-		<li id="artst" class="artst title">가수</li>
+		<li id="m_no" class="m_no title lst_m">NO</li>
+		<li id="subj" class="subj title lst_m">제목</li>
+		<li id="artst" class="artst title lst_m">가수</li>
+	<!-- 시조감상 shijo part -->
+		<li id="sh_no" class="sh_no sh_title lst_s">NO</li>
+		<li id="sh_subj" class="sh_subj sh_title lst_s">제목</li>
+		<li id="sh_date" class="sh_date sh_title lst_s">일시</li>
+		<li id="sh_txt" class="sh_txt sh_title lst_s">내용</li>
 	</div>
+	
 	<div id="data" class="data report">
 	</div>
 </div>
@@ -249,6 +273,7 @@ fread("trimgs");
 fread("ytbm");
 fread("city");
 fread("imges");
+fread("shijo");
 	
 function fread(fn){
     $(function (){
@@ -428,9 +453,13 @@ function fread(fn){
 			}else {if (ctg == "2"){c_cd0 = "";c_cd = "내"; vwpriv();    //===== :contains("내")
 			}else	{if (ctg == "3"){c_cd0 = "";c_cd = "폭포"; cod = c_cd; vwphoto();
 			}else	{if (ctg == "4"){c_cd0 = "기묘한 ";c_cd = "바위 나무"; cod = c_cd; vwphoto();
-			}else	{if (ctg == "5"){tourlist();
-			}else	{if (ctg == "6"){yms();}
-			}}}}}
+			}else	{if (ctg == "5"){shijof();
+			}else	{if (ctg == "6"){c_cd0 = "";c_cd = "일출일몰"; cod = c_cd; vwphoto();
+			}else	{if (ctg == "7"){c_cd0 = "";c_cd = "꽃_벌"; cod = c_cd; vwphoto();
+			}else	{if (ctg == "8"){c_cd0 = "";c_cd = "새_하늘"; cod = c_cd; vwphoto();
+			}else	{if (ctg == "9"){tourlist();
+			}else	{if (ctg == "0"){yms();}
+			}}}}}}}}}
 		});
 	};
  			
@@ -466,7 +495,7 @@ $(function (){
 			cod = '내' + (String(c_cda)).substr(2,2);
 
 			  var telists = $.map(trimgs, function(element, index) {
-				  if (element[5] == cod) { //=== "내19", "폭포", "바위 나무"
+				  if (element[5].includes(cod)) { //=== "내19", "내20", "내21"
 					return [element]
 				  };
 			  });
@@ -504,7 +533,7 @@ $(function (){
 
 //================== 이미지 & description 화면================
   var telists = $.map(trimgs, function(element, index) {
-   	  if (element[5] == c_cd) { //=== "내19", "폭포", "바위 나무"
+   	  if (element[5].includes(c_cd)) { //=== "폭포", "바위 나무", "일출일몰", "꽃_벌", "새_하늘"
   	 	return [element]
   	  };
   });
@@ -529,12 +558,25 @@ $(function (){
   //*== ●●●●●●●● yms();      ----음악 감상 ----start==========
 function yms(){
 	$(function (){
-		$(".container").hide();
 		$(".container1").show();
+		$(".container").hide();
 		yminit();
+		$('.lst_m').show();
+		$('.lst_s').hide();
 	});
 };
 
+  //*== ●●●●●●●● shijof();      ----시조놀이 감상 ----start==========
+function shijof(){
+	$(function (){
+		$(".container1").show();
+		$(".container").hide();
+		shijoinit();
+		$('.lst_s').show();
+		$('.lst_m').hide();
+	});
+};
+		
   //*== ●  vwphoto();      ----테마별 사진모음 ----end==========
 
 function ime(){		//-- 계절별 테이블에서 RETURN 할때
@@ -578,13 +620,17 @@ function osme(){		//-- 테마별 사진모음/산행기에서 RETURN 할때
     $('#canvao').empty();
 	$(".contentso").hide();
 	$(".container").show();
-    $(".mmenu").show();
+        $(".mmenu").show();
 };
 
-
-function yme(){		//-- 음악감상에서 RETURN 할때
+function yme(){		//-- 음악감상/시조놀이감상 LIST에서 mmenu로 RETURN 할때
+        $(".container").show();
 	$(".container1").hide();
-    $(".container").show();
+};
+		
+function shrtn(){		//-- 시조놀이 개별 감상에서 LIST로 RETURN 할때
+    $('#canv').empty();
+    $(".container1").show();
 };
 
   //--■■■■■■■■■■■■■■■■■999_alplist.js■■■■■■■■■■■■■■■■■■
@@ -994,7 +1040,7 @@ var dur = null; var t = null; var num=null;
         onYouTubeIframeAPIReady();
     });
 
-	 $('#canv').append('<div id="lyr"><button id="rtn" class="btn1" onClick="retn();">RETURN</button><br><div><div id="player"></div><hr/> <input type="button" value="재생" onClick="playVideo();"/> <input type="button" value="일시정지" onClick="pauseVideo();"/> <input type="button" value="종료" onClick="stopVideo();"/> <input type="button" id="volumeMute" value="음소거" onClick="volumeMute();"/> 볼륨 : <input type="range" value="50" min="0" max="100" onChange="soundControl(this.value);"/></div><img src="../uni2o4o/mel01.gif" class="mi"><img src="../uni2o4o/mel02.gif"  class="mi"> <img src="../uni2o4o/mel03.gif" class="mi"><img src="../uni2o4o/mel02.gif" class="mi"><img src="../uni2o4o/mel01.gif" class="mi"><br><br><br><h3 class="h3">' + ytbm[num][3] + ' - ' + ytbm[num][4] + '</h3><br><br><div class="wd">' + ytbm[num][5] + '</div><br><img src="../uni2o4o/iou.gif"><br><br></div><br><br>');
+	 $('#canv').append('<div id="lyr"><button id="rtn" class="btn1" onClick="retn();">RETURN</button><br><div><div id="player"></div><hr/> <input type="button" value="재생" onClick="playVideo();"/> <input type="button" value="일시정지" onClick="pauseVideo();"/> <input type="button" value="종료" onClick="stopVideo();"/> <input type="button" id="volumeMute" value="음소거" onClick="volumeMute();"/> 볼륨 : <input type="range" value="50" min="0" max="100" onChange="soundControl(this.value);"/></div><img src="../uni2o4o/mel01.gif" class="mi"><img src="../uni2o4o/mel02.gif"  class="mi"> <img src="../uni2o4o/mel03.gif" class="mi"><img src="../uni2o4o/mel02.gif" class="mi"><img src="../uni2o4o/mel01.gif" class="mi"><br><br><br><h3 class="h3">' + ytbm[num][3] + ' - ' + ytbm[num][4] + '</h3><br><br><div class="wd">' + ytbm[num][5] + '</div><br><img src="../uni2o4o/iou.gif"><br><br></div>');
 
 	});
 };
@@ -1044,20 +1090,20 @@ var dur = null; var t = null; var num=null;
 var orderBy = "asc";
 
 function yminit(){
-  tagParsing(ytbm, true);
+  tagParsing_m(ytbm, true);
 
   //click Evt 정렬
   $(".title").click(function(){
     var titleName = this.id;
     if(titleName == "m_no"){
       objSort(ytbm, [0]);
-      tagParsing(ytbm, false);
+      tagParsing_m(ytbm, false);
     }else if(titleName == "subj"){
       objSort(ytbm, [3]);
-      tagParsing(ytbm, false);
+      tagParsing_m(ytbm, false);
     }else if(titleName == "artst"){
       objSort(ytbm, [4]);
-      tagParsing(ytbm, false);
+      tagParsing_m(ytbm, false);
     }
   })
 }
@@ -1078,17 +1124,63 @@ function objSort(obj, sort){
   }
 }
  
-function tagParsing(obj, yminit){
+function tagParsing_m(obj, yminit){
   var len = obj.length;
   var tag = '';
   for(i=0; i<obj.length; i++){
-    tag += "<li class='m_no mus' title='"+ i +"'>"+obj[i][0]+"</li>"
-    +"<li class='subj mus' title='"+ i +"'>"+obj[i][3]+"</li>"
-    +"<li class='artst'>"+obj[i][4]+"</li>";
+    tag += "<li class='m_no mus lst_m' title='"+ i +"'>"+obj[i][0]+"</li>"
+    +"<li class='subj mus lst_m' title='"+ i +"'>"+obj[i][3]+"</li>"
+    +"<li class='artst lst_m'>"+obj[i][4]+"</li>";
   }
   document.getElementById("data").innerHTML = tag;
 };
 
+//================ 시조놀이 List 정렬================
+
+function shijoinit(){
+  tagParsing_s(shijo, true);
+
+  //click Evt 정렬
+  $(".sh_title").click(function(){
+    var titleName = this.id;
+    if(titleName == "sh_no"){
+      objSort(shijo, [0]);
+      tagParsing_s(shijo, false);
+    }else if(titleName == "sh_subj"){
+      objSort(shijo, [2]);
+      tagParsing_s(shijo, false);
+    }else if(titleName == "sh_date"){
+      objSort(shijo, [1]);
+      tagParsing_s(shijo, false);
+    }else if(titleName == "sh_txt"){
+      objSort(shijo, [4]);
+      tagParsing_s(shijo, false);
+    }
+  })
+}
+
+function tagParsing_s(objs, shijoinit){
+  var len = objs.length;
+  var tag = '';
+  for(i=0; i<objs.length; i++){
+    tag += "<li class='sh_no shi lst_s' title='"+ i +"'>"+objs[i][0]+"</li>"
+    +"<li class='sh_subj shi lst_s' title='"+ i +"'>"+objs[i][2]+"</li>"
+    +"<li class='sh_date shi lst_s'>"+objs[i][1]+"</li>"+"<li class='sh_txt shi lst_s'>"+objs[i][4]+"</li>";
+  }
+  document.getElementById("data").innerHTML = tag;
+};
+
+//================ 시조놀이 감상 display ==========
+	$(document).on("click", ".shi", 
+	function(){
+		$(".container1").hide();
+		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
+		num = Number(sen);
+		$('#canv').empty();
+		$('#canv').append('<div id="lyr"><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><br><div class="wd">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
+	});   
+		
+		
    //--■■■■■■■■■■■■■■■■■해외여행사진 __ostour■■■■■■■■■■■■■■■■■■
   var htxt1 = ''; var htxt2 = '';
   var ftxt1 = ''; var ftxt2 = '';
