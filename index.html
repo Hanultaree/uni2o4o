@@ -46,6 +46,7 @@
 	.rock {grid-column: 3/span 1;grid-row: 2/span 1;	max-width:160px;	background:#e0ebeb url(./img_rock.jpg) no-repeat center; }
 	.shijo {grid-column: 1/span 2;grid-row: 3/span 1;	max-width:330px;	background:#e0ebeb url(./img_shijo.jpg) no-repeat center; }
 	.sun {grid-column: 3/span 1;grid-row: 3/span 1;	max-width:160px;	background:#e0ebeb url(./img_sun.jpg) no-repeat center; }
+	.skyview {grid-column: 4/span 1;grid-row: 3/span 2;	max-width:160px;	background:#e0ebeb url(./img_skyview.jpg) no-repeat center; }
 	.flower {grid-column: 2/span 1;grid-row: 4/span 1;	max-width:160px;	background:#e0ebeb url(./img_flower.jpg) no-repeat center; }
 	.bird {grid-column: 3/span 1;grid-row: 4/span 1;	max-width:160px;	background:#e0ebeb url(./img_bird.jpg) no-repeat center; }
 	.ostr {grid-column: 1/span 2;grid-row: 5/span 1;	max-width:330px;	background:#e0ebeb url(./img_ostr.jpg) no-repeat center; }
@@ -227,6 +228,7 @@
 					<div class="mnu ostr" onclick="bran(9)">9해외 여행사진</div>
 					<div class="mnu yms" onclick="bran(0);">0음악감상</div>
 					<div class="mnu right"></div>
+					<div class="mnu skyview" onclick="bran(A)">A하늘_조망</div>
 				</div>
 			</div>
 		</div>
@@ -457,10 +459,11 @@ function fread(fn){
 			}else	{if (ctg == "5"){shijof();
 			}else	{if (ctg == "6"){c_cd0 = "";c_cd = "일출일몰"; cod = c_cd; vwphoto();
 			}else	{if (ctg == "7"){c_cd0 = "";c_cd = "꽃_벌"; cod = c_cd; vwphoto();
-			}else	{if (ctg == "8"){c_cd0 = "";c_cd = "새_하늘"; cod = c_cd; vwphoto();
+			}else	{if (ctg == "8"){c_cd0 = "";c_cd = "새_동물"; cod = c_cd; vwphoto();
 			}else	{if (ctg == "9"){tourlist();
-			}else	{if (ctg == "0"){yms();}
-			}}}}}}}}}
+			}else	{if (ctg == "0"){yms();
+			}else	{if (ctg == "A"){c_cd0 = "";c_cd = "하늘_조망"; cod = c_cd; vwphoto();}
+			}}}}}}}}}}
 		});
 	};
  			
@@ -534,7 +537,7 @@ $(function (){
 
 //================== 이미지 & description 화면================
   var telists = $.map(trimgs, function(element, index) {
-   	  if (element[5].includes(c_cd)) { //=== "폭포", "바위 나무", "일출일몰", "꽃_벌", "새_하늘"
+   	  if (element[5].includes(c_cd)) { //=== "폭포", "바위 나무", "일출일몰", "꽃_벌", "새_동물", "하늘_조망"
   	 	return [element]
   	  };
   });
