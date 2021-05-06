@@ -153,9 +153,8 @@
 	.shi{background:#e0ebeb;padding:5px 10px;}
 	.sh_title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
 	.sh_no{text-align:center;}
-	.sh_subj, .sh_date{}
 	.sh_txt{grid-column: 4/span 2;}
-	.sh_title:hover .shi:hover, button:hover{color:red;cursor:pointer}
+	.sh_title:hover, .sh_subj:hover, button:hover{color:red;cursor:pointer}
 
  /*------------  해외여행 사진 ---- ostour 용 css------------ */
     .contentso{display:none;min-height:940px;background:url("http://cfile284.uf.daum.net/original/99DD35415E547C4839E5D4") 100% center no-repeat fixed;color:black;width:100%;max-height:100%;}
@@ -1167,13 +1166,13 @@ function tagParsing_s(objs, shijoinit){
   for(i=0; i<objs.length; i++){
     tag += "<li class='sh_no shi lst_s' title='"+ i +"'>"+objs[i][0]+"</li>"
     +"<li class='sh_subj shi lst_s' title='"+ i +"'>"+objs[i][2]+"</li>"
-    +"<li class='sh_date lst_s'>"+objs[i][1]+"</li>"+"<li class='sh_txt lst_s'>"+objs[i][4]+"</li>";
+    +"<li class='sh_date shi lst_s'>"+objs[i][1]+"</li>"+"<li class='sh_txt shi lst_s'>"+objs[i][4]+"</li>";
   }
   document.getElementById("data").innerHTML = tag;
 };
 
 //================ 시조놀이 감상 display ==========
-	$(document).on("click", ".shi", 
+	$(document).on("click", ".sh_subj", 
 	function(){
 		$(".container1").hide();
 		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
