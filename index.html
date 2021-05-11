@@ -539,6 +539,15 @@ $(function (){
   	  };
   });
 
+	if (c_cd == "일출일몰"){
+		var alist = $.map(trimgs, function(element, index) {
+			if (element[5].includes("그림")) {
+				return [element]
+			};
+		});
+		telists.push(...alist);
+	};
+	
 	for ( i=0 ; i < telists.length ; i++ )
 		{
 			if (telists[i][3] ==""){}
