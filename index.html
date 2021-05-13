@@ -148,7 +148,7 @@
 	.h3{text-align:center;color:darkblue;}
 	#canv{padding:0px;margin:10px;text-align:left;}
 	.mi{height:35px;}
-	@media screen and (min-width: 950px) { .wd,.wds {font-size:1.2em;} .h3,.h3s{font-size:1.4em;} .report{font-size:0.9em;}}
+	@media screen and (min-width: 950px) { .wd{font-size:1.2em;} .wds{font-size:1.2em;} .h3{font-size:1.4em;} .h3s{font-size:1.4em;} .report{font-size:0.9em;}}
  /*------------  시조놀이 감상 ----shijo List 용 css------------ */
 	.shi{background:#e0ebeb;padding:5px 10px;}
 	.sh_title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
@@ -1199,7 +1199,7 @@ function tagParsing_s(objs, shijoinit){
 		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
 		num = Number(sen);
 		$('#canv').empty();
-		$('#canv').append('<div id="lyrs"><div id="bkgrds" style="background:url(' + shijo[num][6] + ');"></div><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3s">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><div class="adds">' + shijo[num][5] + '</div><br><div class="wds">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
+		$('#canv').append('<div id="lyrs"><div id="bkgrds" style="background:url(' + shijo[num][6] + '); background-size:550px;"></div><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3s">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><div class="adds">' + shijo[num][5] + '</div><br><div class="wds">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
 	});   
 		
 		
