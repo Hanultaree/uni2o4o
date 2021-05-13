@@ -142,7 +142,7 @@
 	.title li:hover, .mus:hover, button:hover{color:red;cursor:pointer}
 	.btn1{font-size:0.9em; text-align:center; font-weight:bold;margin:5px 150px;padding:5px;}
 
-	#lyr{border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;
+	#lyr{min-height:400px;border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;
 		border-spacing:11px;padding:1px;background:#ffe6ff;height:auto;text-align:center;font-family:"굴림";font-weight:bold;}
 	.wd{color:blue;padding-left:80px;text-align:left;line-height:160%;height:auto;overflow-y: auto;font-size:0.8em;}
 	.h3{text-align:center;color:darkblue;}
@@ -1193,10 +1193,8 @@ function tagParsing_s(objs, shijoinit){
 		$(".container1").hide();
 		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
 		num = Number(sen);
-		var p_urls = shijo[num][6];
 		$('#canv').empty();
-		$('#canv').append('<div id="lyr"><div id="bkgrds"></div><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><br><div class="wd">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
-		$('#bkgrds').css({"background":"url(var(p_urls))"});
+		$('#canv').append('<div id="lyr"><div id="bkgrds" style="background:url(' + shijo[num][6] + ');"></div><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><br><div class="wd">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
 	});   
 		
 		
