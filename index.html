@@ -1192,7 +1192,8 @@ function tagParsing_s(objs, shijoinit){
 		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
 		num = Number(sen);
 		$('#canv').empty();
-		$('#canv').append('<div id="lyr"><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><br><div class="wd">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
+		$('#canv').append('<div id="lyr"><div class="bkgrd"></div><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><br><div class="wd">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
+		$('.bkgrd').css("background-image",url(shijo[num][6]));
 	});   
 		
 		
