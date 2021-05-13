@@ -61,8 +61,7 @@
 	.ha,.hb,.h2{text-align: center;}
 	.btn{cursor:pointer;text-align:center;font-weight:bold;padding:5px;color:#f00;margin:5px 20px; position:fixed;}
 	.b1{left:150px;}
-	.contents{max-width: 1100px;height:auto;display:grid;grid-gap:2px;grid-template-columns: 6fr 2fr 4fr 5fr 3fr 8fr 11fr 11fr;border:5px solid gray;}
-	.contents div{font-size:0.8em;}
+	.contents{max-width: 1100px;height:auto;display:grid;grid-gap:2px;grid-template-columns: 6fr 2fr 4fr 5fr 3fr 8fr 11fr 11fr;border:5px solid gray;font-size:0.8em;}
 	.mnt:hover,.mnta:hover{color:red;cursor:pointer;}
 
 	.item.s0{grid-column:span 8;padding:30px 50px;}
@@ -840,7 +839,7 @@ function shrtn(){		//-- 시조놀이 개별 감상에서 LIST로 RETURN 할때
   //========== data table list ======================
   	var listxt = new Array; var lstsm="";
 
-  		listxt.push('<div class="titleTable contents"><div id="" class="lit u0"><button class="btn" onclick="item();">RETURN</button><h2 class="h2"> ◆◆◆  산행지 List  ◆◆◆ </h2><br></div><div id="name" class="stitle lit u1">산이름</div><div id="area" class="stitle lit u2">지역</div><div id="date" class="stitle lit u3">일자</div><div id="mont" class="stitle lit u4">월</div><div id="hr" class="stitle lit u5">시간</div><div id="cour" class="stitle lit u6">코스</div></div><div id="data" class="contents data"></div>');
+  		listxt.push('<div class="contents"><div id="" class="lit u0"><button class="btn" onclick="item();">RETURN</button><h2 class="h2"> ◆◆◆  산행지 List  ◆◆◆ </h2><br></div><div id="name" class="stitle lit u1">산이름</div><div id="area" class="stitle lit u2">지역</div><div id="date" class="stitle lit u3">일자</div><div id="mont" class="stitle lit u4">월</div><div id="hr" class="stitle lit u5">시간</div><div id="cour" class="stitle lit u6">코스</div><div id="data" class="contents data"></div></div>');
 
   for (i=0; i< listxt.length; i++){lstsm=lstsm+listxt[i]};  //*--canvass <div>에 작성된 code 기록....
 	$(".container").append([lstsm]);
