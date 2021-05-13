@@ -14,7 +14,7 @@
   <style type="text/css">
 	*{margin:0;padding:0px;list-style:none;text-decoration:none;}
 	body{font-size:100%;}
-	.container{max-width:2100px;border:5px solid gray;}
+	.container{border:5px solid gray;max-width:2100px;}
 /*------------------mmenu 용 css-------------------- */
 	.mmenu {background: url(./bga.jpg) fixed;display:grid; grid-template-columns: 1fr;padding: 20px;background-size:cover;}
 	.head {	text-align: center;font-weight: bold;margin-bottom:20px;font-family:"Nanum Brush Script","서울흘기","굴림";}
@@ -62,12 +62,13 @@
 	.btn{cursor:pointer;text-align:center;font-weight:bold;padding:5px;color:#f00;margin:5px 20px; position:fixed;}
 	.b1{left:150px;}
 	.contents{height:auto;display:grid;grid-gap:2px;grid-template-columns: 6fr 2fr 4fr 5fr 3fr 8fr 11fr 11fr;}
+	.contents div{font-size:0.8em;}
 	.mnt:hover,.mnta:hover{color:red;cursor:pointer;}
 
 	.item.s0{grid-column:span 8;padding:30px 50px;}
 	.item.s2{grid-column:span 3;}
 	.item.s3{grid-column:span 2;}
-	.item{background:#e0ebeb;padding:5px;font-size:0.8em;}
+	.item{background:#e0ebeb;padding:5px;}
 	.tit,.s1{text-align:center;font-weight:bold;}
 
  /*------------  tlistg(); ----산행지 List 용 css------------ */
@@ -79,7 +80,7 @@
 	.stitle:hover{color:red;cursor:pointer;}
 
  /*------------  alprpt(); ----산행지 별 산행사진/슬라이드 용 css------------ */
-	.canvass{grid-column:span 8;background:black;border-top: 5px solid #cc9933;border-left: 5px solid #cc9933;border-right: 5px solid #663300;border-bottom: 5px solid #663300;max-width: 1100px;border:5px solid gray;}
+	.canvass{grid-column:span 8;background:black;border-top: 5px solid #cc9933;border-left: 5px solid #cc9933;border-right: 5px solid #663300;border-bottom: 5px solid #663300;}
 	.canvass>div{padding:3%;padding-bottom:0;color:#ffccff;background:black;}
 	#canva1{position: relative;height:360px;}
 	.header{padding:30px;}
@@ -92,7 +93,6 @@
 	
 	.li{font-size:0.8em;line-height:180%;}
 	img{max-width:100%;text-align:center;margin:1%;}
-	  .pcanvas{border:5px solid gray;}
 	.pcanvas>div{color:#ffccff;background:black;padding:3%;}
 	.pcanvas h2{padding-top:2%;}
 	.pcanvas button{cursor:pointer;margin:3%;color:#f00;}
@@ -132,7 +132,7 @@
   	}
 
  /*------------  음악감상 ----yms Music List 용 css------------ */
-	.container1{display:none;border:5px solid gray;background:lightblue;text-align:left;padding:10px;margin:10px;max-width: 1100px;}
+	.container1{display:none;border:5px solid gray;background:lightblue;text-align:left;padding:10px;margin:10px;}
 	.report{display:grid;	grid-template-columns: 2fr 3fr 3fr 2fr 6fr;	grid-gap:1px;	border:1px solid gray;font-size:0.7em;}
 	.mus,.artst{background:#e0ebeb;}
 	.title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
@@ -146,22 +146,15 @@
 		border-spacing:11px;padding:1px;background:#ffe6ff;height:auto;text-align:center;font-family:"굴림";font-weight:bold;}
 	.wd{color:blue;padding-left:80px;text-align:left;line-height:160%;height:auto;overflow-y: auto;font-size:0.8em;}
 	.h3{text-align:center;color:darkblue;}
-	#canv{max-width:1100px;padding:0px;margin:10px;text-align:left;}
+	#canv{padding:0px;margin:10px;text-align:left;}
 	.mi{height:35px;}
-	@media screen and (min-width: 950px) { .wd,.wds{font-size:1.2em;} .h3,.h3s{font-size:1.4em;} .report{font-size:0.9em;}}
+	@media screen and (min-width: 950px) { .wd {font-size:1.2em;} .h3{font-size:1.4em;} .report{font-size:0.9em;}}
  /*------------  시조놀이 감상 ----shijo List 용 css------------ */
-	#lyrs{max-width: 1100px;background:#ffe6ff;border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;
-		border-spacing:11px;padding:1px;height:auto;text-align:center;font-family:"arial";font-weight:bold;}
-	.wds{min-height:250px;color:black;padding-left:80px;text-align:left;line-height:160%;height:auto;overflow-y: auto;font-size:0.8em;z-index:10;}
 	.shi{background:#e0ebeb;padding:5px 10px;}
 	.sh_title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
 	.sh_no{text-align:center;}
 	.sh_txt{grid-column: 4/span 2;}
-	.sh_title:hover, .sh_subj:hover, button:hover{color:red;cursor:pointer;}
-/*	.bkgrd{width: 550px;height: 363px;position:absolute;left:520px;top:100px;z-index:0;opacity: 0.8;clip: rect( 25px, 530px, 343px, 20px ); 
-		background-image: url(var(p_url)); background-size: 550px; background-repeat: no-repeat;}*/
-	.h3s{margin-left:120px;text-align:left;color:black;}
-	  .add{padding-right:600px;text-align:right;color:black;font-size:0.8em;}
+	.sh_title:hover, .sh_subj:hover, button:hover{color:red;cursor:pointer}
 
  /*------------  해외여행 사진 ---- ostour 용 css------------ */
     .contentso{display:none;min-height:940px;background:url("http://cfile284.uf.daum.net/original/99DD35415E547C4839E5D4") 100% center no-repeat fixed;color:black;width:100%;max-height:100%;}
@@ -537,12 +530,13 @@ $(function (){
   musbox( null,5);
 
   var ccdn = new Array; var ccdsum = "";
+
   if (c_cd == "일출일몰"){
   	  ccdn.push('<div class="pcanvas"><div class="header"><button class="btn" onClick="vme();">RETURN</button><h2 class="h2">' + c_cd + c_cd0 + ' 사진모음......</h2></div><div class="main"><p class="ta">배경음악은..... <span class="tb">'+titlm+'</span></p><p class="tc">'+titln+'</p>');
   }else{
   	  ccdn.push('<div class="pcanvas"><div class="header"><button class="btn" onClick="vme();">RETURN</button><h2 class="h2">' + c_cd0 + c_cd + ' 사진모음......</h2></div><div class="main"><p class="ta">배경음악은..... <span class="tb">'+titlm+'</span></p><p class="tc">'+titln+'</p>');
   };
-	  
+
 //================== 이미지 & description 화면================
   var telists = $.map(trimgs, function(element, index) {
    	  if (element[5].includes(c_cd)) { //=== "폭포", "바위 나무", "일출일몰", "꽃_벌", "새_동물", "하늘_조망"
@@ -550,15 +544,15 @@ $(function (){
   	  };
   });
 
-	if (c_cd == "일출일몰"){
+	if (c_cd==="일출일몰"){
 		var alist = $.map(trimgs, function(element, index) {
 			if (element[5].includes("그림")) {
 				return [element]
 			};
 		});
 		telists.push(...alist);
-	};
-	
+	}
+
 	for ( i=0 ; i < telists.length ; i++ )
 		{
 			if (telists[i][3] ==""){}
@@ -992,7 +986,7 @@ else{
    //--■■■■■■■■■■■■■■■■■음악 __Oplayer.js■■■■■■■■■■■■■■■■■■
 
 var rank = null; var title = ""; var duet = null;
-var dur = null; var t = null; var num=null; var p_url = "";
+var dur = null; var t = null; var num=null;
 
   	$( function() {
 //================ 음악 List 자동재생================
@@ -1197,12 +1191,8 @@ function tagParsing_s(objs, shijoinit){
 		$(".container1").hide();
 		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
 		num = Number(sen);
-		p_url = shijo[num][6];
 		$('#canv').empty();
-		$('#canv').append('<div id="lyrs"><div class="bkgrd"></div><br><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3s">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><div class="add">' + shijo[num][5] + '</div><br><br><div class="wds">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
-		$(".bkgrd").css("background-image",p_url);
-		$(".bkgrd").css("background-size",550px);
-		$(".bkgrd").css("background-repeat",no-repeat);
+		$('#canv').append('<div id="lyr"><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><br><div class="wd">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
 	});   
 		
 		
