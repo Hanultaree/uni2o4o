@@ -80,7 +80,7 @@
 	.stitle:hover{color:red;cursor:pointer;}
 
  /*------------  alprpt(); ----산행지 별 산행사진/슬라이드 용 css------------ */
-	.canvass{grid-column:span 8;background:black;border-top: 5px solid #cc9933;border-left: 5px solid #cc9933;border-right: 5px solid #663300;border-bottom: 5px solid #663300;}
+	.canvass{grid-column:span 8;background:black;border-top: 5px solid #cc9933;border-left: 5px solid #cc9933;border-right: 5px solid #663300;border-bottom: 5px solid #663300;max-width:1100px;}
 	.canvass>div{padding:3%;padding-bottom:0;color:#ffccff;background:black;}
 	#canva1{position: relative;height:360px;}
 	.header{padding:30px;}
@@ -132,7 +132,7 @@
   	}
 
  /*------------  음악감상 ----yms Music List 용 css------------ */
-	.container1{display:none;border:5px solid gray;background:lightblue;text-align:left;padding:10px;margin:10px;}
+	.container1{display:none;border:5px solid gray;background:lightblue;text-align:left;padding:10px;margin:10px;max-width:1100px;}
 	.report{display:grid;	grid-template-columns: 2fr 3fr 3fr 2fr 6fr;	grid-gap:1px;	border:1px solid gray;font-size:0.7em;}
 	.mus,.artst{background:#e0ebeb;}
 	.title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
@@ -142,7 +142,7 @@
 	.title li:hover, .mus:hover, button:hover{color:red;cursor:pointer}
 	.btn1{font-size:0.9em; text-align:center; font-weight:bold;margin:5px 150px;padding:5px;}
 
-	#lyr{min-height:400px;border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;
+	#lyr{border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;
 		border-spacing:11px;padding:1px;background:#ffe6ff;height:auto;text-align:center;font-family:"굴림";font-weight:bold;}
 	.wd{color:blue;padding-left:80px;text-align:left;line-height:160%;height:auto;overflow-y: auto;font-size:0.8em;}
 	.h3{text-align:center;color:darkblue;}
@@ -156,7 +156,12 @@
 	.sh_txt{grid-column: 4/span 2;}
 	.sh_title:hover, .sh_subj:hover, button:hover{color:red;cursor:pointer}
 
-	#bkgrds{width: 550px;height: 363px;position:absolute;left:520px;top:100px;z-index:0;opacity: 0.8;clip: rect( 25px, 530px, 343px, 20px ); background-color:light-gray; background-size: 550px; background-repeat: no-repeat;}	  
+	#lyrs{min-height:440px;border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;
+		border-spacing:11px;padding:1px;background:#ffe6ff;height:auto;text-align:center;font-family:"arial";font-weight:bold;}
+	.wds{color:black;padding-left:80px;text-align:left;line-height:160%;height:auto;overflow-y: auto;font-size:0.8em;}
+	.h3s{margin-left:120px;text-align:left;color:black;}
+	#bkgrds{width: 550px;height: 363px;position:absolute;left:520px;top:100px;z-index:0;opacity: 0.8;clip: rect( 25px, 530px, 343px, 20px ); background-color:light-gray; background-size: 55%; background-repeat: no-repeat;}	  
+	  .adds{padding-right:500px;text-align:right;}
 	  
  /*------------  해외여행 사진 ---- ostour 용 css------------ */
     .contentso{display:none;min-height:940px;background:url("http://cfile284.uf.daum.net/original/99DD35415E547C4839E5D4") 100% center no-repeat fixed;color:black;width:100%;max-height:100%;}
@@ -1194,7 +1199,7 @@ function tagParsing_s(objs, shijoinit){
 		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
 		num = Number(sen);
 		$('#canv').empty();
-		$('#canv').append('<div id="lyr"><div id="bkgrds" style="background:url(' + shijo[num][6] + ');"></div><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><br><div class="wd">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
+		$('#canv').append('<div id="lyrs"><div id="bkgrds" style="background:url(' + shijo[num][6] + ');"></div><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3s">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><div class="adds">' + shijo[num][5] + '</div><br><div class="wds">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
 	});   
 		
 		
