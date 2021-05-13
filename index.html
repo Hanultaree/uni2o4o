@@ -1196,7 +1196,7 @@ function tagParsing_s(objs, shijoinit){
 		var p_urls = shijo[num][6];
 		$('#canv').empty();
 		$('#canv').append('<div id="lyr"><div id="bkgrds"></div><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><br><div class="wd">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
-		document.getElementById("bkgrds").style.background = "url(p_urls)";
+		document.getElementById("bkgrds").style.background = "url(var(p_urls))";
 	});   
 		
 		
