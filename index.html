@@ -160,7 +160,7 @@
 		border-spacing:11px;padding:1px;background:#ffe6ff;height:auto;text-align:center;font-family:"arial";font-weight:bold;}
 	.wds{color:black;padding-left:80px;text-align:left;line-height:160%;height:auto;overflow-y: auto;font-size:1.0em;}
 	.h3s{margin-left:100px;text-align:left;color:black;}
-	#bkgrds{width: 550px;height: 363px;position:absolute;left:550px;top:100px;opacity: 0.7;clip: rect( 25px, 530px, 343px, 20px ); background-repeat: no-repeat;}	  
+	#bkgrds{width: 550px;height: 363px;position:absolute;left:550px;top:100px;clip: rect( 25px, 530px, 343px, 20px ); background-repeat: no-repeat;}	  
 	  .adds{padding-right:560px;text-align:right;font-size:0.8em;}
 	  
  /*------------  해외여행 사진 ---- ostour 용 css------------ */
@@ -1199,7 +1199,7 @@ function tagParsing_s(objs, shijoinit){
 		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
 		num = Number(sen);
 		$('#canv').empty();
-		$('#canv').append('<div id="lyrs"><div id="bkgrds" style="background:url(' + shijo[num][6] + '); background-size:550px;"></div><br><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3s">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><div class="adds">' + shijo[num][5] + '</div><br><div class="wds">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
+		$('#canv').append('<div id="lyrs"><div id="bkgrds" style="background:url(' + shijo[num][6] + '); background-size:550px;opacity: 0.7;"></div><br><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3s">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><div class="adds">' + shijo[num][5] + '</div><br><div class="wds">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
 	});   
 		
 		
