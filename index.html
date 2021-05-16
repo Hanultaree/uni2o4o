@@ -156,7 +156,7 @@
 	.sh_txt{grid-column: 4/span 2;}
 	.sh_title:hover, .sh_subj:hover, button:hover{color:red;cursor:pointer}
 
-	.canvz{display:grid; grid-template-columns:7fr 8fr;grid-template-rows: auto;max-width:1100px;background:#ffe6ff;border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff; border-spacing:11px;padding:1px;font-family:"arial";}
+	.canvz{display:grid; grid-template-columns:7fr 8fr;grid-template-rows: minmax(440px, 1fr);max-width:1100px;background:#ffe6ff;border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff; border-spacing:11px;padding:1px;font-family:"arial";}
 	.lyrs{grid-column:1/span 1;grid-row:1/span 1; min-height:440px;text-align:center;font-weight:bold;}
 	.bkgrds{grid-column:2/span 1;grid-row:1/span 1;-webkit-mask-image: radial-gradient(ellipse 120% 105% at 300px 190px, black 0%, transparent 40%);border:1px solid red; background-repeat: no-repeat; background-position:center center;margin-top:50px;}
 	.adds{text-align:right;padding:10px;}
@@ -1198,7 +1198,7 @@ function tagParsing_s(objs, shijoinit){
 		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
 		num = Number(sen);
 		$('#canv').empty();
-		$('#canv').append('<div class="canvz"><div id="lyrs"><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><h3 class="h3s">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><p class="adds">' + shijo[num][5] + '</p><br><p class="wds">' + shijo[num][4] + '</p><br><br><br></div><div id="bkgrds" class="bkgrds" style="background:url(' + shijo[num][6] + ');"></div></div>');
+		$('#canv').append('<div class="canvz"><div id="lyrs"><br/><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br/><br/><br/><h3 class="h3s">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><p class="adds">' + shijo[num][5] + '</p><br><p class="wds">' + shijo[num][4] + '</p><br><br><br></div><div id="bkgrds" class="bkgrds" style="background:url(' + shijo[num][6] + ');"></div></div>');
 	});   
 		
 		
