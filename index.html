@@ -156,12 +156,12 @@
 	.sh_txt{grid-column: 4/span 2;}
 	.sh_title:hover, .sh_subj:hover, button:hover{color:red;cursor:pointer}
 
-	#lyrs{max-width:1100px;min-height:440px;border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;
-		border-spacing:11px;padding:1px;background:#ffe6ff;height:auto;text-align:center;font-family:"arial";font-weight:bold;}
-	.wds{color:black;padding-left:80px;text-align:left;line-height:160%;height:auto;overflow-y: auto;font-size:1.0em;}
-	.h3s{margin-left:100px;text-align:left;color:black;}
-	#bkgrds{width: 550px;height: 363px;position:absolute;left:550px;top:100px;clip: rect( 25px, 530px, 343px, 20px ); background-repeat: no-repeat;}	  
-	  .adds{padding-right:560px;text-align:right;font-size:0.8em;}
+	.canvz{display:grid; grid-template-columns:7fr 8fr;grid-template-rows: auto;max-width:1100px;background:#ffe6ff;border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff; border-spacing:11px;padding:1px;font-family:"arial";}
+	.lyrs{grid-column:1/span 1;grid-row:1/span 1; min-height:440px;text-align:center;font-weight:bold;}
+	.bkgrd{grid-column:2/span 1;grid-row:1/span 1; background-repeat: no-repeat; -webkit-mask-image: radial-gradient(ellipse 120% 105% at 300px 190px, black 0%, transparent 40%);border:1px solid red;background-position:center center;margin-top:50px;}
+	.btn1{margin:30px;}
+	.adds{text-align:right;padding:10px;}
+	.wds{padding-left:30px;text-align:left;line-height:180%;}
 	  
  /*------------  해외여행 사진 ---- ostour 용 css------------ */
     .contentso{display:none;min-height:940px;background:url("http://cfile284.uf.daum.net/original/99DD35415E547C4839E5D4") 100% center no-repeat fixed;color:black;width:100%;max-height:100%;}
@@ -1199,7 +1199,7 @@ function tagParsing_s(objs, shijoinit){
 		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
 		num = Number(sen);
 		$('#canv').empty();
-		$('#canv').append('<div id="lyrs"><div id="bkgrds" style="background:url(' + shijo[num][6] + '); background-size:550px;opacity: 0.5;"></div><br><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3s">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><div class="adds">' + shijo[num][5] + '</div><br><div class="wds">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
+		$('#canv').append('<div class="canvz"><div id="lyrs"><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><h3 class="h3s">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><p class="adds">' + shijo[num][5] + '</p><br><p class="wds">' + shijo[num][4] + '</p><br><br><br></div><div id="bkgrds" style="background:url(' + shijo[num][6] + ');"></div></div>');
 	});   
 		
 		
