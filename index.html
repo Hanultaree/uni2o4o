@@ -162,7 +162,8 @@
 
  	@media screen and (min-width: 691px) { .canvz { display:flex; justify-content:center; max-width:1100px;} .lyrs{display:inline-block;} .bkgrds{display:inline-block;width:500px; -webkit-mask-image: radial-gradient(ellipse 120% 85% at 250px 170px, black 37%, transparent 40%);}} 
 
-	.h3s{text-align:center;}
+	.hs{text-align:center;}
+	.h2s{display:inline;}
 	.adds{text-align:right; padding:10px;font-size:1.0em;font-weight:bold;}
 	.wds{margin-left: 30px;font-size:1.2em;font-weight:bold; text-align:left; line-height: 180%;}
 	  
@@ -1202,7 +1203,7 @@ function tagParsing_s(objs, shijoinit){
 		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
 		num = Number(sen);
 		$('#canv').empty();
-		$('#canv').append('<div class="canvz"><div id="lyrs"><br/><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br/><br/><br/><h2 class="h3s">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp <span class="adds">' + shijo[num][1] + '</span></h2><br><p class="adds">' + shijo[num][5] + '</p><br><p class="wds">' + shijo[num][4] + '</p><br><br><br></div><div id="bkgrds" class="bkgrds" style="background:url(' + shijo[num][6] + '); background-size:contain; background-repeat: no-repeat;"></div></div>');
+		$('#canv').append('<div class="canvz"><div id="lyrs"><br/><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br/><br/><br/><div class="hs"><h2 class="h2s">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp </h2><span class="adds">' + shijo[num][1] + '</span></div><br><p class="adds">' + shijo[num][5] + '</p><br><p class="wds">' + shijo[num][4] + '</p><br><br><br></div><div id="bkgrds" class="bkgrds" style="background:url(' + shijo[num][6] + '); background-size:contain; background-repeat: no-repeat;"></div></div>');
 	});   
 		
 		
