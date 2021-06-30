@@ -467,7 +467,7 @@ function fread(fn){
 			}else {if (ctg == "2"){c_cd0 = "";c_cd = "내"; vwpriv();    //===== :contains("내")
 			}else	{if (ctg == "3"){c_cd0 = "";c_cd = "폭포"; cod = c_cd; vwphoto();
 			}else	{if (ctg == "4"){c_cd0 = "기묘한 ";c_cd = "바위 나무"; cod = c_cd; vwphoto();
-			}else	{if (ctg == "5"){c_cd0 = "";c_cd = "꽃_벌"; vwphoto();
+			}else	{if (ctg == "5"){c_cd0 = "";c_cd = "꽃_벌"; vwphoto1();
 			}else	{if (ctg == "6"){c_cd0 = " & 그림같은";c_cd = "일출일몰"; cod = c_cd; vwphoto();
 			}else	{if (ctg == "7"){c_cd0 = "";c_cd = "새_동물"; cod = c_cd; vwphoto();
 			}else	{if (ctg == "8"){c_cd0 = "";c_cd = "하늘_조망"; cod = c_cd; vwphoto();
@@ -537,8 +537,8 @@ $(function (){
 });
 };
 
-  //*== ●●●●●●●● vwphoto();      ----테마별 사진모음 ----start==========
-function vwphoto(){
+  //*== ●●●●●●●● vwphoto1();      ----테마별 사진모음 ----start==========
+function vwphoto1(){
 $(function (){
   if (c_cd == "꽃_벌"){
 	var ccds = '<div class="combos"><select id="combos"><option value="-1" selected="selected">계절 선택</option><option value="꽃_벌1">봄</option><option value="꽃_벌2">여름</option><option value="꽃_벌3">가을</option><option value="꽃_벌4">겨울</option></select></div>';
@@ -552,8 +552,44 @@ $(function (){
 			}else	{if (c_cd1 == "꽃_벌3")	{c_cd0 = "가을";
 			}else	{if (c_cd1 == "꽃_벌4")	{c_cd0 = "겨울";}}}}
 			cod = c_cd1;  
+
+  $(".mmenu").hide();
+  musbox( null,5);
+
+    var ccdn = new Array; var ccdsum = "";
+  	  ccdn.push('<div class="pcanvas"><div class="header"><button class="btn" onClick="vme();">RETURN</button><h2 class="h2">' + c_cd0 + c_cd + ' 사진모음......</h2></div><div class="main"><p class="ta">배경음악은..... <span class="tb">'+titlm+'</span></p><p class="tc">'+titln+'</p>');
+ 
+//================== 이미지 & description 화면================
+  var telists = $.map(trimgs, function(element, index) {
+   	  if (element[5].includes(cod)) { //=== "꽃_벌1"
+  	 	return [element]
+  	  };
+  });
+
+	for ( i=0 ; i < telists.length ; i++ )
+		{
+			if (telists[i][3] ==""){}
+			else{
+				if (telists[i][4] ==""){}
+				else{	ccdn.push('<p>↓ &nbsp;' + telists[i][4] + '</p>');}
+			ccdn.push('<p><img src="' + telists[i][3] + '"></p>');	}
+		}
+
+//================== 하단 꼬리말 footer 화면==================
+ 		ccdn.push('</div><div class="footer"><div id="player"></div><p>끝까지 즐감해 주셔서 감사합니다......</p><img src="../uni2o4o/iou.gif"></div></div>');
+
+ for (i=0; i<ccdn.length; i++){ccdsum=ccdsum+ccdn[i]};
+  $('.container').append([ccdsum]);
+		});
 	});
   };
+		
+});
+};
+
+  //*== ●●●●●●●● vwphoto();      ----테마별 사진모음 ----start==========
+function vwphoto(){
+$(function (){
 
   $(".mmenu").hide();
   musbox( null,5);
@@ -599,7 +635,7 @@ $(function (){
 		});
 });
 };
-
+		
   //*== ●●●●●●●● yms();      ----음악 감상 ----start==========
 function yms(){
 	$(function (){
@@ -657,9 +693,9 @@ function cmea(){		//-- 산행사진에서 산행지list로 RETURN 할때
 function vme(){		//-- 테마별 사진모음/산행기에서 RETURN 할때
 	stopVideo();
 	$(".pcanvas").remove();
-	$(".mmenu").show();
 	$(".combo").remove();
 	$(".combos").remove();
+	$(".mmenu").show();
 };
 
 function osme(){		//-- 테마별 사진모음/산행기에서 RETURN 할때
