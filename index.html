@@ -543,7 +543,6 @@ $(function (){
   if (c_cd == "꽃_벌"){
 	var ccds = '<div class="combos"><select id="combos"><option value="-1" selected="selected">계절 선택</option><option value="꽃_벌1">봄</option><option value="꽃_벌2">여름</option><option value="꽃_벌3">가을</option><option value="꽃_벌4">겨울</option></select></div>';
 	$('.maing').append(ccds);
-  }else{
 
 	$(function(){
 		$('#combos').change(function(){
@@ -553,6 +552,8 @@ $(function (){
 			}else	{if (c_cd1 == "꽃_벌3")	{c_cd0 = "가을";
 			}else	{if (c_cd1 == "꽃_벌4")	{c_cd0 = "겨울";}}}}
 			cod = c_cd1;  
+	});
+  };
 
   $(".mmenu").hide();
   musbox( null,5);
@@ -596,8 +597,6 @@ $(function (){
  for (i=0; i<ccdn.length; i++){ccdsum=ccdsum+ccdn[i]};
   $('.container').append([ccdsum]);
 		});
-	});
-  };
 });
 };
 
