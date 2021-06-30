@@ -45,8 +45,8 @@
 	.priv {grid-column: 3/span 1;grid-row: 1/span 1;	max-width:160px;	background:#e0ebeb url(./img_priv.jpg) no-repeat center; }
 	.wfall {grid-column: 1/span 1;grid-row: 2/span 1;	max-width:160px;	background:#e0ebeb url(./img_wfall.jpg) no-repeat center; }
 	.rock {grid-column: 2/span 1;grid-row: 2/span 1;	max-width:160px;	background:#e0ebeb url(./img_rock.jpg) no-repeat center; }
-	.sun {grid-column: 3/span 1;grid-row: 2/span 1;	max-width:160px;	background:#e0ebeb url(./img_sun.jpg) no-repeat center; }
-	.flower {grid-column: 1/span 1;grid-row: 3/span 1;	max-width:160px;	background:#e0ebeb url(./img_flower.jpg) no-repeat center; }
+	.flower {grid-column: 3/span 1;grid-row: 2/span 1;	max-width:160px;	background:#e0ebeb url(./img_flower.jpg) no-repeat center; }
+	.sun {grid-column: 1/span 1;grid-row: 3/span 1;	max-width:160px;	background:#e0ebeb url(./img_sun.jpg) no-repeat center; }
 	.bird {grid-column: 2/span 1;grid-row: 3/span 1;	max-width:160px;	background:#e0ebeb url(./img_bird.jpg) no-repeat center; }
 	.skyview {grid-column: 3/span 1;grid-row: 3/span 2;	max-width:160px;	background:#e0ebeb url(./img_skyview.jpg) no-repeat center; }
 	.ostr {grid-column: 1/span 2;grid-row: 4/span 1;	max-width:330px;	background:#e0ebeb url(./img_ostr.jpg) no-repeat center; }
@@ -56,6 +56,7 @@
 	.mnuno {font-size: 1.5em;font-weight: bold;}
 	.mnu:hover{color:#f00;cursor:pointer;}
 	.combo{	grid-column: 4/span 1;grid-row: 1/span 1;}
+	.combos{grid-column: 4/span 1;grid-row: 2/span 1;}
 
  	@media screen and (min-width: 678px) { .lans { grid-column: 2/span 1; grid-row: 2/span 3; } .prof {grid-column: 1/span 2;grid-row: 3/span 1;}} 
 	@media screen and (min-width: 950px) { .lans { grid-column: 3/span 1; grid-row: 1/span 3; }}
@@ -231,8 +232,8 @@
 					<div class="mnu priv" onclick="bran(2);"><span class="mnuno">2</span>내사진</div>
 					<div class="mnu wfall" onclick="bran(3);"><span class="mnuno">3</span>폭포</div>
 					<div class="mnu rock" onclick="bran(4);"><span class="mnuno">4</span>기묘한 바위 나무</div>
-					<div class="mnu sun" onclick="bran(5);"><span class="mnuno">5</span>일출일몰_그림</div>
-					<div class="mnu flower" onclick="bran(6);"><span class="mnuno">6</span>꽃_벌</div>
+					<div class="mnu flower" onclick="bran(5);"><span class="mnuno">5</span>꽃_벌</div>
+					<div class="mnu sun" onclick="bran(6);"><span class="mnuno">6</span>일출일몰_그림</div>
 					<div class="mnu bird" onclick="bran(7);"><span class="mnuno">7</span>새_동물</div>
 					<div class="mnu skyview" onclick="bran(8)"><span class="mnuno">8</span>하늘_조망</div>
 					<div class="mnu ostr" onclick="bran(9)"><span class="mnuno">9</span>해외 여행사진</div>
@@ -466,8 +467,8 @@ function fread(fn){
 			}else {if (ctg == "2"){c_cd0 = "";c_cd = "내"; vwpriv();    //===== :contains("내")
 			}else	{if (ctg == "3"){c_cd0 = "";c_cd = "폭포"; cod = c_cd; vwphoto();
 			}else	{if (ctg == "4"){c_cd0 = "기묘한 ";c_cd = "바위 나무"; cod = c_cd; vwphoto();
-			}else	{if (ctg == "5"){c_cd0 = " & 그림같은";c_cd = "일출일몰"; cod = c_cd; vwphoto();
-			}else	{if (ctg == "6"){c_cd0 = "";c_cd = "꽃_벌"; cod = c_cd; vwphoto();
+			}else	{if (ctg == "5"){c_cd0 = "";c_cd = "꽃_벌"; vwphoto();
+			}else	{if (ctg == "6"){c_cd0 = " & 그림같은";c_cd = "일출일몰"; cod = c_cd; vwphoto();
 			}else	{if (ctg == "7"){c_cd0 = "";c_cd = "새_동물"; cod = c_cd; vwphoto();
 			}else	{if (ctg == "8"){c_cd0 = "";c_cd = "하늘_조망"; cod = c_cd; vwphoto();
 			}else	{if (ctg == "9"){tourlist();
@@ -539,10 +540,26 @@ $(function (){
   //*== ●●●●●●●● vwphoto();      ----테마별 사진모음 ----start==========
 function vwphoto(){
 $(function (){
+  if (c_cd == "꽃_벌"){
+	var ccds = '<div class="combos"><select id="combos"><option value="-1" selected="selected">계절 선택</option><option value="꽃_벌1">봄</option><option value="꽃_벌2">여름</option><option value="꽃_벌3">가을</option><option value="꽃_벌4">겨울</option></select></div>';
+	$('.maing').append(ccds);
+
+	$(function(){
+		$('#combos').change(function(){
+			c_cd1 = this.value; //=== 꽃_벌1
+			if (c_cd1 == "꽃_벌1")	{c_cd0 = "봄";
+			}else	{if (c_cd1 == "꽃_벌2")	{c_cd0 = "여름";
+			}else	{if (c_cd1 == "꽃_벌3")	{c_cd0 = "가을";
+			}else	{if (c_cd1 == "꽃_벌4")	{c_cd0 = "겨울";}}}}
+			cod = c_cd1;  
+		});
+	});
+  };
+
   $(".mmenu").hide();
   musbox( null,5);
 
-  var ccdn = new Array; var ccdsum = "";
+    var ccdn = new Array; var ccdsum = "";
 
   if (c_cd == "일출일몰"){
   	  ccdn.push('<div class="pcanvas"><div class="header"><button class="btn" onClick="vme();">RETURN</button><h2 class="h2">' + c_cd + c_cd0 + ' 사진모음......</h2></div><div class="main"><p class="ta">배경음악은..... <span class="tb">'+titlm+'</span></p><p class="tc">'+titln+'</p>');
@@ -552,7 +569,7 @@ $(function (){
 
 //================== 이미지 & description 화면================
   var telists = $.map(trimgs, function(element, index) {
-   	  if (element[5].includes(c_cd)) { //=== "폭포", "바위 나무", "일출일몰", "꽃_벌", "새_동물", "하늘_조망"
+   	  if (element[5].includes(cod)) { //=== "폭포", "바위 나무", "일출일몰", "꽃_벌", "새_동물", "하늘_조망"
   	 	return [element]
   	  };
   });
