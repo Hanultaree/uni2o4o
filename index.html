@@ -483,7 +483,7 @@ function fread(fn){
 
 function vwpriv(){
 $(function (){
-	var ccds = '<div class="combo combo1"><select id="combo1"><option value="-1" selected="selected">년도 선택</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2012">2012~14</option><option value="2007">2007~11</option></select></div>';
+	var ccds = '<div class="combo1"><select id="combo1"><option value="-1" selected="selected">년도 선택</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2012">2012~14</option><option value="2007">2007~11</option></select></div>';
 	$('.maing').append(ccds);
 
 	$(function(){
@@ -540,7 +540,7 @@ $(function (){
   //*== ●●●●●●●● vwphoto1();      ----꽃_벌 사진모음 ----start==========
 function vwphoto1(){
 $(function (){
-	var ccds = '<div class="combo combo2"><select id="combo2"><option value="-1" selected="selected">계절 선택</option><option value="꽃_벌1">봄</option><option value="꽃_벌2">여름</option><option value="꽃_벌3">가을</option><option value="꽃_벌4">겨울</option></select></div>';
+	var ccds = '<div class="combo2"><select id="combo2"><option value="-1" selected="selected">계절 선택</option><option value="꽃_벌1">봄</option><option value="꽃_벌2">여름</option><option value="꽃_벌3">가을</option><option value="꽃_벌4">겨울</option></select></div>';
 	$('.maing').append(ccds);
 
 	$(function(){
@@ -688,7 +688,8 @@ function cmea(){		//-- 산행사진에서 산행지list로 RETURN 할때
 function vme(){		//-- 테마별 사진모음/산행기에서 RETURN 할때
 	stopVideo();
 	$(".pcanvas").remove();
-	$(".combo").remove();
+	$(".combo1").remove();
+	$(".combo2").remove();
     $(".mmenu").show();
 };
 
