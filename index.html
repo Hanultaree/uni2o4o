@@ -114,14 +114,14 @@
       50% {width:63.5%;height:63.5%;opacity:1.0;transform:(translateX(18%),translateY(6%);}
       67% {width:13.0%;height:13.0%;opacity:0.8;transform:(translateX(2%),translateY(22%);}
       84% {width:5.6%;height:5.6%;opacity:0.3;transform:(translateX(11%),translateY(9%);}
-      100% {width:0.6%;height:0.6%;opacity:0.0;transform:(translateX(50%),translateY(9%);}*/
+      100% {width:0.6%;height:0.6%;opacity:0.0;transform:(translateX(50%),translateY(9%);}
 		0%{width:10px;height:10px;opacity: 0.0;transform:translate(490px,60px);}
 		16%{width:90px;height:60px;opacity: 0.3;transform:translate(740px,60px);}
 		33%{width:180px;height:120px;opacity: 0.8;transform:translate(800px,100px);}
 		50%{width:450px;height:300px;opacity: 1.0;transform:translate(270px,20px);}
 		67%{width:180px;height:120px;opacity: 0.8;transform:translate(10px,100px);}
 		84%{width:90px;height:60px;opacity: 0.3;transform:translate(160px,60px);}
-		100%{width:10px;height:10px;opacity: 0.0;transform:translate(490px,60px);}
+		100%{width:10px;height:10px;opacity: 0.0;transform:translate(490px,60px);}*/
 	}
  /*------------  해외여행사진/슬라이드 용 css------------ */
     .slide1{position:absolute;text-align:center;animation:myslide 24s -20s ease infinite;}
@@ -925,6 +925,23 @@ function shrtn(){		//-- 시조놀이 개별 감상에서 LIST로 RETURN 할때
 function alprpt(seq){
 	$(function (){
 		itiner();
+		xx = $("#canva1").outerWidth(); yy = xx * 0.36;
+		$("#canva1").css("height",yy+"px");
+		xcss = "0% {width:0.6%;height:0.6%;opacity:0.0; transform: translate(" + xx*0.50 + "," + yy*0.09 + ");}"
+		document.querySelector("@keyframes myslide").classList.add(xcss);
+		xcss = "16% {width:5.6%;height:5.6%;opacity:0.3; transform: translate(" + xx*0.82 + "," + yy*0.09 + ");}"
+		document.querySelector("@keyframes myslide").classList.add(xcss);
+		xcss = "33% {width:13.0%;height:13.0%;opacity:0.8; transform: translate(" + xx*0.84 + "," + yy*0.22 + ");}"
+		document.querySelector("@keyframes myslide").classList.add(xcss);
+		xcss = "50% {width:63.5%;height:63.5%;opacity:1.0; transform: translate(" + xx*0.18 + "," + yy*0.06 + ");}"
+		document.querySelector("@keyframes myslide").classList.add(xcss);
+		xcss = "67% {width:13.0%;height:13.0%;opacity:0.8; transform: translate(" + xx*0.02 + "," + yy*0.22 + ");}"
+		document.querySelector("@keyframes myslide").classList.add(xcss);
+		xcss = "84% {width:5.6%;height:5.6%;opacity:0.3; transform: translate(" + xx*0.11 + "," + yy*0.09 + ");}"
+		document.querySelector("@keyframes myslide").classList.add(xcss);
+		xcss = "100% {width:0.6%;height:0.6%;opacity:0.0; transform: translate(" + xx*0.50 + "," + yy*0.09 + ");}"
+		document.querySelector("@keyframes myslide").classList.add(xcss);
+
 		sli();
 		musbox( null,5);
 });
