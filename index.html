@@ -755,10 +755,11 @@ function shrtn(){		//-- 시조놀이 개별 감상에서 LIST로 RETURN 할때
     };
 
   	for (i=0; i<lists.length; i++){
-   			if ((lists[i][1].substr(5,2)>02) && (lists[i][1].substr(5,2)<06)){ssn=2;}
-   			if ((lists[i][1].substr(5,2)>05) && (lists[i][1].substr(5,2)<09)){ssn=3;}
-   			if ((lists[i][1].substr(5,2)>08) && (lists[i][1].substr(5,2)<12)){ssn=4;}
-   			if ((lists[i][1].substr(5,2)>11) || (lists[i][1].substr(5,2)<03)){ssn=5;}
+		console.log(lists.length);
+   			if ((lists[i][1].substr(5,2)>02) && (lists[i][1].substr(5,2)<06)){ssn=2;};
+   			if ((lists[i][1].substr(5,2)>05) && (lists[i][1].substr(5,2)<09)){ssn=3;};
+   			if ((lists[i][1].substr(5,2)>08) && (lists[i][1].substr(5,2)<12)){ssn=4;};
+   			if ((lists[i][1].substr(5,2)>11) || (lists[i][1].substr(5,2)<03)){ssn=5;};
   //*-------------------------------------------------------------------------------
   			yer=parseInt(lists[i][1].substr(0,4));
   		if (i==0){
