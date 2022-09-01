@@ -17,10 +17,10 @@
 
 function reque(){
   const xhr = new XMLHttpRequest();
-  const url = 'https://t1.daumcdn.net/cafeattach/1CWC9/';
+  const url = 'https://t1.daumcdn.net/cafeattach/1CWC9/732426cf63b9cee635c9e75732cd90656577116f';
 
   xhr.open('GET', url);
-  xhr.onreadystatechange = fetchPage('https://t1.daumcdn.net/cafeattach/1CWC9/732426cf63b9cee635c9e75732cd90656577116f');
+  xhr.onreadystatechange = load('https://t1.daumcdn.net/cafeattach/1CWC9/732426cf63b9cee635c9e75732cd90656577116f');
 //  xhr.onreadystatechange = someHandler;
   xhr.send();
 };
