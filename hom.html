@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="#" type="image/x-icon">
+  <link rel="icon" href="#" type="image/x-icon">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />        
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>      
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   </head>
   <body>
     <h1>fetch example</h1>
@@ -37,17 +45,17 @@ function getXMLHttpRequest(){
 	}
 */
 const xhr = new XMLHttpRequest();
-const url = 'https://t1.daumcdn.net/cafeattach/1CWC9/732426cf63b9cee635c9e75732cd90656577116f';
+const url = 'https://t1.daumcdn.net/cafeattach/1CWC9/';
 
 xhr.open('GET', url);
 //xhr.onreadystatechange = someHandler;
 xhr.send();
 }
 
-function load(url){
+function load(url1){
 	console.log("load 실행");
 	httpRequest = getXMLHttpRequest();
-	httpRequest.onreadystatechange = viewMessage(url);
+	httpRequest.onreadystatechange = viewMessage(url1);
 	/*
 		open() 함수는 세개의 인자를 입력받는다.
 		1. HTTP 메서드 지정
@@ -57,7 +65,7 @@ function load(url){
 			- false : 동기
 	*/
 	
-	httpRequest.open("GET", url, true);
+	httpRequest.open("GET", url1, true);
 	/*
 		send() : 사용자의 요청을 서버로 보내는 역할.
 	*/
