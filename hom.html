@@ -20,7 +20,8 @@
   const url = 'https://t1.daumcdn.net/cafeattach/1CWC9/';
 
   xhr.open('GET', url);
-  xhr.onreadystatechange = someHandler;
+  xhr.onreadystatechange = fetchPage;
+//  xhr.onreadystatechange = someHandler;
   xhr.send();
   
   
