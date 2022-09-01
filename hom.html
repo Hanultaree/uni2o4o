@@ -15,21 +15,15 @@
 <p id="text"></p>
 <script type="text/javascript">
   
-  
+function fetchPage(fileName){  
   const xhr = new XMLHttpRequest();
   const url = 'https://t1.daumcdn.net/cafeattach/1CWC9/';
 
   xhr.open('GET', url);
-  xhr.onreadystatechange = fetchPage('https://t1.daumcdn.net/cafeattach/1CWC9/732426cf63b9cee635c9e75732cd90656577116f');
+  xhr.onreadystatechange = fetch(fileName);
 //  xhr.onreadystatechange = someHandler;
   xhr.send();
   
-  
-  
-  
-  
-  
-function fetchPage(fileName){  
   fetch(fileName).then(function(response){
     response.text().then(function(text){
       document.querySelector('#text').innerHTML = text;
